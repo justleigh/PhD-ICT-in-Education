@@ -1,0 +1,15 @@
+Dimension,Construct,Definition,Relevance
+Context,Socioeconomic Status,"The economic and social position of students and their families, influencing access to and use of ICT.",Provides background for understanding ICT access disparities.
+,School Location,The geographical location of the school (urban or rural) and its impact on ICT resources.,Helps identify regional differences in ICT integration.
+,Cultural Attitudes,Cultural beliefs and attitudes towards technology and education at school.,Offers insight into the social context of ICT use at school.
+Input,ICT Resources,Availability and quality of technology and digital tools in educational settings at school.,Assesses the infrastructure for ICT integration at school.
+,Teacher Training in ICT,Extent of teacher preparation for integrating ICT into teaching practices at school.,Evaluates the readiness of educators for ICT use at school.
+,School Policies on ICT,Policies and guidelines regarding ICT use in education set by schools or authorities.,Indicates the regulatory environment for ICT at school.
+,Student Engagement (Attitudes),"Students' perceptions, beliefs, and feelings towards using ICT in their learning environment at school.",Affects the willingness to engage with ICT and can significantly influence the acceptance and effective use of technology in education.
+Process,ICT Use in Teaching,How teachers incorporate ICT into their teaching methods and curriculum at school.,Reflects the application of ICT in instructional practices at school.
+,Pedagogical Approaches with ICT,"The use of ICT to support various teaching strategies, such as student-centered learning or collaborative learning.",Assesses how ICT is integrated into pedagogical practices to enhance teaching effectiveness.
+,Student Engagement (Time),The amount of time that students spend using ICT for learning activities during school hours.,Indicates the level of integration of ICT in daily educational activities and can be a predictor of skill acquisition and comfort with technology.
+,Student engagement (Attention),The degree of students' focus or concentration when using ICT for learning purposes in school.,Reflects the quality of ICT engagement and may correlate with deeper learning and retention of information.
+,Student engagement (Effort),The amount of energy or diligence that students apply to ICT-related tasks during school-based learning.,Suggests how motivated students are to use ICT resources for learning and may affect the outcomes of technology-enhanced education.
+Output,Educational Outcomes,"Impact of ICT on students' academic performance in areas such as reading, mathematics, and science at school.",Evaluates the effectiveness of ICT in enhancing learning at school.
+,ICT Competencies,Skills and abilities of students to effectively use ICT for educational purposes at school.,Assesses the development of digital literacy and competencies at school.
