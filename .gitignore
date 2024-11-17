@@ -1,0 +1,9 @@
+# Ignore system files and temporary files
+.Rhistory
+.RData
+.Ruserdata
+.DS_Store
+
+# Ignore RStudio project files
+.Rproj.user
+
