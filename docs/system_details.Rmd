@@ -1,22 +1,30 @@
 # System Details
 
-## Computer Architecture and Operating System
+### Computer Architecture and Operating System
 - **Model Name**: MacBook Air
 - **Chip**: Apple M1
-- **Total Number of Cores**: 8 (4 performance and 4 efficiency)
+- **Cores**: 8 (4 performance and 4 efficiency)
 - **Memory**: 8 GB
-- **System Version**: macOS 11.3.1 (20E241)
-- **Kernel Version**: Darwin 20.4.0
-- **System Integrity Protection**: Enabled
+- **System Version**: macOS 11.3.1
 
-## R Environment
+### R Environment
 - **R Version**: 4.3.0 (2023-04-21)
 - **Platform**: aarch64-apple-darwin20 (64-bit)
 - **Running Under**: macOS Big Sur 11.3.1
-- **Base Packages**: stats, graphics, grDevices, utils, datasets, methods, base
-- **Attached Packages**: ggplot2_3.4.4
 
-## RStudio Environment
-- **RStudio Version**: 2023.06.2 Build 561
-- **Release**: "Mountain Hydrangea" (de44a311, 2023-08-25)
-- **Git Version**: 2.30.1 (Apple Git-130)
+### R Packages
+- **Base Packages**: stats, graphics, grDevices, utils, datasets, methods, base
+- **Other Attached Packages**: ggplot2_3.4.4
+
+### System Details: Matrix Products
+- **BLAS**: /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib
+- **LAPACK**: /Library/Frameworks/R.framework/Versions/4.3-arm64/Resources/lib/libRlapack.dylib
+
+### Locale and Time Zone
+- **Locale**: en_US.UTF-8
+- **Time Zone**: Asia/Bangkok
+
+### Software Toolchain
+- **IDE**: RStudio, Version: 2023.06.2 Build 561
+- **Version Control**: Git version 2.30.1 (Apple Git-130)
+- **Repository URL**: [PhD-ICT-Education-Analysis](https://github.com/justleigh/PhD-ICT-Education-Analysis)
