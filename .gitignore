@@ -6,4 +6,6 @@
 
 # Ignore RStudio project files
 .Rproj.user
-data/processed/*/cleaned_pisa_data_*.csv
+data/private/
+data/private/metadata/
+data/private/processed/

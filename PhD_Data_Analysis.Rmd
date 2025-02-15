@@ -3,16 +3,18 @@ title: |
   "Navigating the Digital Divide: The Role of ICT in Enhancing Educational Outcomes in Thailand"
 author: |
   Leigh Pearson, Ph.D. Candidate  
-  International College, Mahidol University  
   School of Global Studies, Thammasat University  
+  International College, Mahidol University  
   leigh.pea@mahidol.edu
 date: "Last Updated: `r format(Sys.Date(), '%d-%m-%Y')`"
 output: 
   pdf_document: 
+    latex_engine: xelatex
     toc: false
     toc_depth: 3
     number_sections: true
     keep_tex: true
+documentclass: article
 header-includes:
    - \usepackage{fancyhdr}
    - \usepackage{caption}
@@ -20,6 +22,10 @@ header-includes:
    - \usepackage[margin=1in]{geometry} % Adjusts page margins to prevent text overflow
    - \setlength{\parindent}{0pt} % Removes indentation on the title page for alignment
    - \pagenumbering{gobble} % Hides page number on title page
+   - \usepackage[none]{hyphenat}  # Disables hyphenation
+   - \setlength{\emergencystretch}{3em}  # Helps prevent overly stretched lines
+   - \usepackage{ragged2e}       # Enables justification
+   - \justifying                 # Justifies all text
 ---
 
 **Note**: The analyses and findings presented in this document are part of an ongoing PhD research project focused on ICT use in education within Thailand. These results represent preliminary findings and are intended to fulfill initial publication requirements. The complete research project, which includes further analyses and comprehensive conclusions, is described in full within the [PhD-ICT-Education-Analysis repository](https://github.com/justleigh/PhD-ICT-Education-Analysis). As the project progresses, additional insights and updates will be incorporated to provide a complete view of ICT's role in educational outcomes.
@@ -50,11 +56,133 @@ Through an analysis of PISA datasets spanning multiple years and complemented by
 
 By examining Thailand's experience, this research will contribute valuable insights to the global discourse on the role of technology in education, particularly in developing countries facing similar digital and educational challenges.
 
+# Research Questions
+1. How does in-classroom use of ICT affect student learning outcomes in Thailand?
+
+2. What role does ICT use outside of the classroom play in the learning outcomes of Thai students?
+
+3. How do contextual factors, such as socio-economic status and access to technology, moderate the relationship between ICT use and educational performance?
+
 # Utilization of Conceptual and Theoretical Frameworks
-This study utilizes two primary frameworks—the PISA ICT Framework and the Multi-Level Framework of Technology Acceptance and Use (MLFTAU). These frameworks were chosen due to their complementary strengths in addressing both systemic and behavioral aspects of ICT integration, aligning with the study’s goals to evaluate how ICT use influences educational outcomes in Thailand.
+This study employs three complementary frameworks: the PISA Questionnaire Framework, the PISA ICT Framework, and the Multi-Level Framework of Technology Acceptance and Use (MLFTAU). Together, these frameworks provide a comprehensive foundation for analyzing the systemic, behavioral, and outcome-driven factors influencing ICT integration in education.
+
+**The PISA Questionnaire Framework**
+
+The PISA Questionnaire Framework serves as a holistic tool for understanding educational systems through its 21 modules, which address a wide range of student, school, and system-level factors. This overarching framework provides the foundation for assessing contextual inputs and outputs, offering internationally validated benchmarks for evaluating educational outcomes.
+
+**The PISA ICT Framework**
+
+The PISA ICT Framework, a specialized subset of the PISA Questionnaire Framework, focuses specifically on ICT access, use, and its impacts. It is divided into two distinct components:
+
+- In-School ICT Framework: Examines ICT resources, infrastructure, and practices within schools, such as the availability of technology, teacher guidance, and classroom integration.
+
+- Outside-the-Classroom ICT Framework: Evaluates ICT use and access beyond school environments, including students' home access to digital tools and their independent use of technology for learning and leisure.
+
+This dual perspective enables a systematic analysis of ICT’s role both within formal learning environments and in students' broader educational ecosystems.
+
+**The Multi-Level Framework of Technology Acceptance and Use (MLFTAU)**
+
+The MLFTAU framework complements the PISA frameworks by addressing the behavioral and psychological factors driving ICT adoption and use. It evaluates how individual, group, and organizational factors influence the acceptance and effective use of ICT. Key constructs such as performance expectancy, facilitating conditions, and social influence help analyze the motivations and barriers to ICT engagement.
+
+By integrating these frameworks, this study bridges the systemic factors (captured by the PISA Questionnaire and ICT frameworks) with behavioral constructs (captured by MLFTAU) to evaluate how ICT access, use, and facilitating conditions influence educational outcomes in Thailand. The inclusion of the Output domain—measuring cognitive learning outcomes, ICT competencies, and well-being—ensures a holistic analysis of both inputs and impacts.
+
+## PISA Questionnaire Framework
+The PISA Questionnaire Framework, developed by the OECD, provides a comprehensive structure for evaluating the contextual, systemic, and individual factors that influence student learning outcomes. The PISA Questionnaire Framework is designed to complement the PISA cognitive assessments in reading, mathematics, and science literacy. While the cognitive assessments measure student performance on standardized tasks, the questionnaire modules provide the contextual information needed to explain variations in student outcomes and analyze relationships between educational inputs, processes, and results. 
+
+This dual approach ensures a comprehensive evaluation of learning systems, enabling researchers to identify the conditions that enable or constrain educational achievement. The framework consists of 21 modules covering a wide range of variables, such as socio-economic background, family environment, school resources, and teaching practices. These modules complement the PISA assessment results by offering deeper insights into the factors that enable or constrain educational achievement.
+
+**International Comparability and Standardization**
+
+A key strength of the PISA Questionnaire Framework is its standardized design, which ensures cross-country comparability. By collecting consistent data across diverse educational systems, PISA enables researchers to analyze global trends in educational performance and equity and benchmark country-specific findings, such as ICT use in Thailand, against international standards. For this study, the international comparability of PISA data adds significant value, situating Thailand’s educational outcomes within a global context and highlighting areas for improvement.
+
+**Origins of the CIPO Framework**
+
+The PISA Questionnaire Framework was inspired by the CIPO model (Context, Input, Process, and Output), a foundational structure for evaluating educational systems. The CIPO model organizes variables into four components:
+
+- **Context**: The socio-economic, cultural, and systemic environment surrounding education.
+
+- **Input**: Resources, teacher training, student characteristics, and infrastructure.
+
+- **Process**: Practices, methods, and pedagogical approaches within and beyond classrooms.
+
+- **Output**: Measurable outcomes, including academic performance, competencies, and well-being.
+
+PISA now intentionally avoids labeling variables as Context, Input, Process, or Output in recognition of the fact that many variables can serve multiple functions depending on the context or research focus. For example, a student’s confidence in a subject can be analyzed both as an Input (for example, a personal characteristic influencing learning behaviours and outcomes) and/or an Output (for example, a result of prior teaching practices and learning experiences).
+
+Nevertheless, in this study, the CIPO domains are applied to the PISA Questionnaire Framework with the understanding that variables can align with multiple domains simultaneously. This flexible approach allows for a more nuanced analysis, offering insights into where in the educational process learning is supported or constrained.
+
+**Scope and Focus of the PISA Questionnaire Framework**
+
+While the PISA Questionnaire Framework is not specifically focused on ICT, it provides a broader understanding of the educational landscape in which ICT access, use, and impacts can be analyzed. By offering a systemic view of students' environments—both in and outside school—it enables researchers to:
+
+- Examine ICT use within the broader contexts of socio-economic factors, school resources, and teaching practices.
+
+- Identify interacting variables that may facilitate or hinder ICT adoption and its effectiveness.
+
+In this study, the broader scope of the PISA Questionnaire Framework serves as a foundation for understanding the conditions under which ICT is integrated into education, both systemically and behaviorally.
+
+**Rationale for Including CIPO Domains**
+
+For this study, the CIPO domains (Context, Input, Process, Output) have been applied to the PISA Questionnaire Framework to facilitate a more structured and insightful analysis. By organizing variables within the CIPO structure, this study seeks to identify:
+
+1. Where in the educational process (context, input, or process) learning is enabled or constrained.
+
+2. How specific variables can interact across domains to influence educational outcomes.
+
+It is important to note that variables may be assigned to multiple domains where relevant. For instance, a variable like "ICT familiarity" may reflect both:
+
+- **Input**: As a measure of students' prior access and exposure to technology.
+
+- **Process**: As an indicator of how ICT is integrated into teaching and learning.
+
+This multi-categorization approach allows for a more nuanced understanding of the role of ICT in education, reflecting the complexities of real-world learning environments.
+
+**Structure of the PISA Questionnaire Framework**
+
+The PISA Questionnaire Framework’s 21 modules are grouped under broad thematic areas, capturing critical aspects of students' learning environments and experiences. The following table presents key modules and their alignment with potential CIPO domains:
+
+```{r pisa_questionnaire_framework, echo=FALSE}
+library(knitr)
+library(kableExtra)
+
+# Read the CSV file
+data <- read.csv("data/metadata/PISA_&_MLFTAU_construct_data/pisa_main_framework_constructs.csv")
+
+# Create and style the table
+kable(data, align = "l", caption = "Key Constructs/Modules of the PISA Questionnaire Framework") %>%
+  kable_styling(position = "left", full_width = FALSE, latex_options = "scale_down") %>%
+  column_spec(1, width = "1.5cm") %>%
+  column_spec(2, width = "3.5cm") %>%
+  column_spec(3, width = "5cm") %>%
+  column_spec(4, width = "5cm")
+```
+
+The PISA Questionnaire Framework, when analyzed using the CIPO structure, allows this study to:
+
+1. Assess the systemic factors influencing ICT access and use (e.g., policies, resources, socio-economic environment).
+
+2. Examine the inputs and processes that enable or constrain ICT integration in schools and homes.
+
+3. Identify outcomes (e.g., academic performance, ICT competencies, well-being) as measures of ICT effectiveness.
+
+By applying the CIPO domains flexibly, this study embraces the complexity of educational processes, acknowledging that variables can influence multiple stages of learning. The broader scope of the PISA Questionnaire Framework ensures that ICT use is analyzed within its wider educational context, enhancing the depth and breadth of the insights gained.
+
+The PISA Questionnaire Framework provides a robust foundation for evaluating the systemic and contextual factors shaping ICT access and use. While its scope extends beyond ICT, it offers essential insights into the educational environment in which ICT operates. By integrating the CIPO domains into the analysis, this study enables a structured yet flexible approach to identifying the factors that help or hinder learning outcomes.
 
 ## PISA ICT Framework
-The PISA ICT Framework was developed by the OECD to specifically assess the impact of Information and Communication Technology (ICT) within educational systems across countries. This framework is adapted from the older CIPO model, which is structured around four components:
+The PISA ICT Framework, developed by the OECD, was introduced for the first time in the 2022 PISA assessment to specifically evaluate the role and impact of Information and Communication Technology (ICT) in education. Building on the foundations of the CIPO model (Context, Input, Process, and Output), the framework provides a structured approach for analyzing ICT access, use, and outcomes across both school and home environments.
+
+The PISA ICT Framework reflects the increasing importance of ICT in modern education, recognizing its role in enhancing student learning outcomes, digital competencies, and engagement. To achieve a comprehensive understanding, the framework is divided into two complementary components:
+
+1. In-School ICT Framework: Examines ICT-related resources, processes, and pedagogical practices within formal school environments.
+
+2. Outside-the-Classroom ICT Framework: Evaluates ICT access, use, and impacts in students’ home environments and broader educational ecosystems.
+
+Together, these components offer a systemic and layered analysis of ICT’s role in enhancing student learning outcomes, engagement, and digital competencies.
+
+**Origins of the PISA ICT Framework**
+
+Similar to the PISA Questionnaire Framework, this new ICT framework has also been adapted from the older CIPO model, which is structured around four components:
 
 **- Context:** The broader environment in which the educational system operates, including socio-economic, policy, and infrastructure factors that shape ICT access and use.
 
@@ -64,87 +192,189 @@ The PISA ICT Framework was developed by the OECD to specifically assess the impa
 
 **- Output:** The measurable outcomes of ICT use, including academic performance, student engagement, and digital skills.
 
-In the PISA ICT Framework, these four elements are adapted to reflect the specific dynamics of ICT usage in education. It provides a structure for analyzing both in-school and outside-the-classroom factors, such as the availability of ICT resources, policies supporting digital education, and the impact on students’ performance and engagement.
+This structured approach ensures that ICT integration is examined holistically, considering both its systemic context and practical implementation.
+
+**Structure of the PISA Questionnaire Frameworks**
+
+The PISA ICT Framework comprises two key components that reflect the different environments where ICT access, use, and outcomes are observed: in-school and outside-the-classroom. These components allow for a systematic analysis of ICT integration across formal educational settings and informal learning environments, ensuring a holistic understanding of how ICT supports or hinders student outcomes.
+
+To operationalize this analysis, each component is mapped onto relevant constructs that align with the CIPO model domains (Context, Input, Process, and Output). The tables below outline the key constructs and their relevance for both in-school and outside-the-classroom ICT use.
+
+**In-School ICT Constructs**
+
+The in-school ICT framework focuses on the availability, integration, and support of ICT resources within formal school environments. This includes variables related to infrastructure, teacher training, and pedagogical practices that shape ICT use in classrooms. Table 1 presents the relevant constructs, organized within the CIPO structure, to provide a clear framework for analyzing ICT use in schools.
+
+```{r in_school_constructs, echo=FALSE}
+library(knitr)
+library(kableExtra)
+
+# Read the CSV file
+data <- read.csv("data/metadata/PISA_&_MLFTAU_construct_data/PISA_in_school_constructs.csv")
+
+# Create and style the table
+kable(data, align = "l", caption = "Key Constructs of the PISA ICT Framework - In-School Dimension") %>%
+  kable_styling(position = "left", full_width = FALSE, latex_options = "scale_down") %>%
+  column_spec(1, width = "1.5cm") %>%
+  column_spec(2, width = "3.5cm") %>%
+  column_spec(3, width = "5cm") %>%
+  column_spec(4, width = "5cm")
+```
+
+**Outside-the-Classroom ICT Constructs**
+
+The outside-the-classroom ICT framework examines the role of ICT in students’ home environments and informal learning contexts. This component focuses on access to digital tools, independent ICT use, and the influence of family support on ICT engagement. Table 2 presents the key constructs for analyzing outside-the-classroom ICT use, aligned with the CIPO model.
+
+```{r out_of_school_constructs, echo=FALSE}
+library(knitr)
+library(kableExtra)
+
+# Read the CSV file
+data <- read.csv("data/metadata/PISA_&_MLFTAU_construct_data/PISA_out_of_school_constructs.csv")
+
+# Create and style the table
+kable(data, align = "l", caption = "Key Constructs of the PISA ICT Framework - Outside-the-Classroom Dimension") %>%
+  kable_styling(position = "center", full_width = FALSE, latex_options = "scale_down") %>%
+  column_spec(1, width = "1.5cm") %>%
+  column_spec(2, width = "3.5cm") %>%
+  column_spec(3, width = "5cm") %>%
+  column_spec(4, width = "5cm")
+```
+
+These two tables collectively provide a structured foundation for analyzing ICT access, use, and outcomes across school-based and home-based settings. By organizing variables into the CIPO domains, the study highlights the conditions under which ICT integration enhances or constrains student learning outcomes and digital competencies.
+
+**Rationale for Using the PISA ICT Framework**
 
 The PISA ICT Framework was chosen for this study for the following reasons:
 
-**Systemic Analysis of ICT Integration** 
+**1. Systemic Analysis of ICT Integration**
 
-The PISA ICT Framework retains the CIPO model’s structured approach to analyzing educational systems by dividing ICT impact into in-school (in-class) and outside-the-classroom components. This layered approach enables a comprehensive assessment of both the resources available and the contextual factors that influence ICT use, providing a clear structure for understanding ICT’s role across various educational settings.
+The framework aligns with the CIPO model by systematically examining ICT-related factors across both in-school and outside-the-classroom environments. This dual perspective enables a comprehensive understanding of ICT’s role in enhancing educational outcomes at multiple levels.
 
-**Alignment with International Benchmarks** 
+**2. First Application in PISA 2022**
 
-The PISA ICT Framework is tailored to evaluate ICT’s impact within the context of PISA’s global educational assessments, directly supporting the study’s focus on assessing ICT-related educational outcomes in Thailand. By applying a framework already validated within the PISA system, this research can leverage internationally recognized metrics and benchmarks to evaluate ICT’s effectiveness in enhancing learning.
+The PISA ICT Framework’s introduction in 2022 provides a unique opportunity to analyze up-to-date data on ICT access, use, and impacts. As the first application of this framework, the study contributes to a growing body of research focused on ICT integration within global education systems.
 
-**Outcome-Focused Structure** 
+**3. Alignment with International Benchmarks**
 
-The PISA ICT Framework is outcome-driven, making it suitable for measuring tangible educational results like student performance on PISA benchmarks. This outcome orientation aligns directly with the study’s aim to evaluate how ICT usage impacts academic performance, engagement, and equity in Thailand’s educational system.
+As part of the PISA assessment system, the ICT framework offers internationally standardized metrics for evaluating ICT’s role in education. By leveraging these benchmarks, this study situates Thailand’s ICT use within a global comparative context, identifying areas of progress and opportunities for improvement.
+
+**4. Outcome-Focused Design**
+
+The framework emphasizes measurable outcomes, including academic performance, ICT competencies, and well-being. This outcome-driven approach directly supports the study’s aim to evaluate the impacts of ICT access and use on student learning in Thailand.
+
+**5. Relevance to the Thai Context**
+
+In Thailand, ICT integration varies widely across regions, schools, and socio-economic groups. By analyzing both school-based and home-based ICT use, the PISA ICT Framework provides critical insights into the barriers and facilitating conditions that shape ICT adoption and its effectiveness in Thai education.
+
+The PISA ICT Framework, applied for the first time in the 2022 PISA test, provides a systematic and outcome-driven approach to evaluating ICT integration within education. By examining both in-school and outside-the-classroom components, the framework enables a detailed analysis of ICT access, pedagogical practices, and measurable impacts on learning. Combined with the CIPO model, this study leverages the PISA ICT Framework to provide critical insights into ICT’s role in enhancing student learning outcomes, digital competencies, and well-being within Thailand’s education system.
 
 ## Multi-Level Framework of Technology Acceptance and Use (MLFTAU)
-The Multi-Level Framework of Technology Acceptance and Use (MLFTAU), developed by Venkatesh and colleagues, provides a behavioral and psychological perspective on the adoption and effective use of technology. This framework considers factors at multiple levels—individual, organizational, and social—that influence how technology is perceived and utilized. The key components of MLFTAU include:
+The Multi-Level Framework of Technology Acceptance and Use (MLFTAU), developed by Venkatesh et al. (2016), provides a behavioral and psychological perspective on the acceptance and effective use of technology. It evaluates how factors at multiple levels—individual, group/class, organization/school, organization/family, and organization/society—influence the adoption and use of technology.
 
-**- Individual Level:** Focuses on personal factors that influence technology use, such as perceived usefulness, perceived ease of use, and behavioral intention. These factors impact whether individuals (students and teachers) are willing to use ICT tools.
+The MLFTAU identifies key drivers and barriers to technology adoption through constructs such as performance expectancy, effort expectancy, facilitating conditions, and social influence, among others. By capturing these behavioral and organizational dynamics, the framework offers a detailed understanding of why and how technology is used in various contexts.
 
-**- Organizational Level:** Examines how institutional support, resources, and training affect technology adoption within organizations (e.g., schools). This level is important for understanding how school resources and policies influence ICT integration.
+However, while the MLFTAU excels at explaining the acceptance and use of technology, it does not explicitly include constructs for measuring the impact or outcomes of technology adoption—particularly in an educational setting. To address this limitation, this study integrates the PISA outputs into the MLFTAU to assess the tangible effects of ICT use on student learning outcomes, digital competencies, and well-being.
 
-**- Social Influence:** Considers the impact of peer influence, societal expectations, and cultural norms on technology use. For example, students may be influenced by how their peers or teachers view and use ICT.
+**Extending the MLFTAU with PISA Outputs**
 
-**- Facilitating Conditions:** Reflects the infrastructure, support, and resources that enable or constrain effective ICT use. This includes both material resources (such as access to computers) and institutional support.
+The PISA outputs—which measure cognitive learning outcomes, ICT competencies, and broader well-being—are added as an Output domain at the end of the MLFTAU framework. This addition enables the framework to evaluate the impact of technology acceptance and use on measurable educational results. By integrating PISA outputs, the MLFTAU is adapted to analyze not only why ICT is adopted but also how its use translates into learning outcomes.
 
-The MLFTAU framework was selected for this study for the following reasons:
+This modification aligns the MLFTAU with the CIPO model, where the added Output domain serves as the final component in assessing ICT’s influence within educational systems. The adapted framework maintains the behavioral insights of the MLFTAU while incorporating a results-oriented perspective essential for educational research.
 
-**Focus on Behavioral Drivers** 
+Structure of the MLFTAU Framework
+The MLFTAU consists of constructs organized across multiple levels. The following table outlines the original MLFTAU domains and constructs, as well as the added Output domain informed by PISA:
 
-MLFTAU captures individual attitudes, beliefs, and behavioral intentions related to technology use among teachers and students. By examining constructs like performance expectancy, effort expectancy, social influence, and facilitating conditions, this framework allows the study to investigate the psychological factors that drive or hinder ICT adoption in educational settings.
+```{r MLFTAU_constructs, echo=FALSE}
+library(knitr)
+library(kableExtra)
 
-**Applicability to Educational Stakeholders** 
+# Read the CSV file
+data <- read.csv("data/metadata/PISA_&_MLFTAU_construct_data/MLFTAU_constructs.csv")
 
-MLFTAU’s emphasis on understanding user acceptance of technology is especially relevant to this study’s focus on teachers’ and students’ ICT usage. Given that effective ICT integration relies on both access and willingness to use technology, MLFTAU adds depth to the analysis by examining how individual motivations and institutional support affect ICT engagement.
+# Create and style the table
+kable(data, align = "l", caption = "Key Constructs of the Multi-Level Framework of Technology Acceptance and Use (MLFTAU)") %>%
+  kable_styling(position = "center", full_width = FALSE, latex_options = "scale_down") %>%
+  column_spec(1, width = "2cm") %>%
+  column_spec(2, width = "3cm") %>%
+  column_spec(3, width = "5cm") %>%
+  column_spec(4, width = "5cm")
+```
 
-**Complementary to Systemic Analysis** 
+**Rationale for Extending MLFTAU with PISA Outputs**
 
-While the PISA ICT Framework provides a structured view of ICT’s systemic impact on educational outcomes, MLFTAU offers a granular understanding of the behavioral factors influencing ICT adoption. This dual approach captures both the structural and personal dimensions of ICT use, offering a holistic view of its role in Thailand’s educational landscape.
+**1. Bridging Acceptance and Impact**
 
-In summary, the combined use of the PISA ICT Framework and MLFTAU enables a comprehensive analysis that spans both external, systemic factors and individual behavioral drivers. This integration aligns with the study’s objectives to evaluate ICT’s impact on educational outcomes while addressing the practical and psychological barriers to effective ICT use in Thai schools.
+While the MLFTAU explains the why (acceptance and use) of technology, the PISA outputs address the so what — providing measurable outcomes that demonstrate ICT’s impact on learning. This extension creates a direct link between technology adoption and educational results.
 
+**2. Alignment with the CIPO Model**
 
-## Application and Integration of Frameworks in Data Analysis
+By integrating an Output domain, the extended MLFTAU aligns with the CIPO structure, ensuring a systematic analysis of ICT across Context, Input, Process, and Output.
 
-This study applies the CIPO and MLFTAU frameworks synergistically to examine the systemic and behavioral factors influencing ICT use in education. The CIPO model structures the investigation into how contextual, input, and process variables affect student outcomes, while the MLFTAU framework adds depth by analyzing individual attitudes and behaviors toward ICT acceptance within schools. This dual-framework approach enables a nuanced analysis that captures both the external factors shaping ICT access and the behavioral factors that drive ICT use.
+**3. Enhancing Relevance to Education**
 
-In this analysis, data from multiple sources—including the PISA student and ICT questionnaires, along with national datasets like the EMIS and NSO—will be mapped onto the PISA ICT framework, which aligns with the CIPO model’s dimensions of input, process, and output. Contextual information from national datasets provides insights into socio-economic and regional disparities, while process variables, such as ICT integration in classrooms, are explored using teacher and student responses from PISA questionnaires.
+Educational research requires a focus on tangible results. Adding the PISA outputs allows this study to evaluate how technology adoption influences key educational outcomes, such as academic performance, digital skills, and well-being.
 
-The MLFTAU framework adds a behavioral perspective to the analysis of ICT use. For example, regression models will assess how factors such as performance expectancy and facilitating conditions predict ICT usage among teachers and students, thereby influencing educational outcomes. This combined approach captures the systemic and behavioral complexities of ICT use, aligning with the research objectives of assessing ICT integration, identifying barriers and enablers, and making informed policy recommendations.
+**4. Addressing a Research Gap**
+
+The original MLFTAU framework lacks an explicit mechanism for assessing outcomes, which is critical in educational contexts. Integrating PISA outputs fills this gap, making the framework more applicable to studies analyzing ICT’s role in student learning.
+
+**Application of the Extended MLFTAU in This Study**
+
+By integrating the PISA outputs into the MLFTAU, this study will:
+
+1. Assess the factors influencing ICT acceptance and use (e.g., performance expectancy, facilitating conditions, and social influence).
+
+2. Analyze the relationship between technology adoption and learning outcomes using the PISA outputs (e.g., cognitive performance, ICT competencies, and well-being).
+
+3. Identify the conditions under which ICT adoption translates into positive educational impacts in Thailand’s education system.
+
+Extending the Multi-Level Framework of Technology Acceptance and Use (MLFTAU) with the PISA outputs, enables a holistic evaluation of ICT adoption and its measurable effects on education. By incorporating an Output domain aligned with the CIPO model, this study bridges the gap between technology acceptance and its tangible impacts, ensuring a comprehensive analysis of how ICT enhances student performance, digital competencies, and well-being within Thailand’s educational system.
+
+**Summary**
+
+This chapter introduced and explained the three primary frameworks that guide this study: the PISA Questionnaire Framework, the PISA ICT In-School and Outside-the-Classroom Frameworks, and the Multi-Level Framework of Technology Acceptance and Use (MLFTAU).
+
+1. The PISA Questionnaire Framework provides a broad, systemic perspective on educational environments, capturing key variables through its 21 modules. It serves as the foundation for understanding the contextual and systemic factors influencing student outcomes.
+
+2. The PISA ICT Framework, introduced for the first time in 2022, enables a focused analysis of ICT access, use, and impacts, divided into in-school and outside-the-classroom components.
+
+3. The MLFTAU framework addresses the behavioral drivers of technology adoption and use, capturing the psychological and organizational factors influencing ICT engagement. To bridge the gap in assessing measurable impacts, this study extends the MLFTAU with the PISA outputs—cognitive outcomes, ICT competencies, and well-being.
+
+By combining these frameworks, the study takes a holistic approach that integrates systemic, behavioral, and outcome-driven analyses to evaluate the role of ICT in enhancing learning outcomes within Thailand’s education system.
 
 # Objectives
 
-The objectives of this research are to:
+The objectives of this research are designed to systematically evaluate the integration, enablers, barriers, and impacts of ICT use in Thai education. This study applies the PISA Questionnaire Framework and the PISA ICT Framework (both in-school and outside-the-classroom components) to analyze systemic and contextual factors influencing ICT integration. Additionally, the Multi-Level Framework of Technology Acceptance and Use (MLFTAU) provides a behavioral lens to examine individual and organizational factors affecting ICT acceptance and utilization.
+
+The following objectives guide this study:
 
 **1. Assess the current state of ICT integration in Thai education and its alignment with national strategy aspirations.**
 
-By understanding how closely current ICT practices align with Thailand’s strategic goals, this objective provides insights into whether investments and policy directives are translating effectively into school environments. This analysis will reveal gaps in ICT resources or infrastructure that may hinder educational quality, particularly in digital literacy and access.
+This objective examines how effectively current ICT practices align with Thailand’s strategic goals for digital education. By analyzing data on ICT access, infrastructure, and usage within school environments, this study identifies areas of success and gaps where policy aspirations may not align with practical realities.
 
-The findings will help policymakers identify where the strategy falls short in practical application, enabling targeted adjustments. For example, if schools lack sufficient devices or broadband access, the government can prioritize these resources in underperforming areas, thereby supporting equitable learning environments and improving digital competencies across regions.
+The findings will help policymakers identify systemic challenges such as inadequate devices, limited broadband access, or disparities in ICT availability across regions. Targeted interventions—like infrastructure improvements in underserved areas—can enhance equitable digital access and improve student competencies in alignment with Thailand’s broader educational goals.
 
 **2. Identify the enablers and barriers to effective ICT use within educational settings.**
 
-Identifying the factors that encourage or obstruct ICT use in classrooms (such as teacher training, ICT resources, or administrative support) directly impacts student learning experiences. Schools with adequate enablers, like well-trained teachers and high-quality ICT infrastructure, are likely to see enhanced student engagement and better digital skill acquisition.
+This objective focuses on identifying factors that facilitate or obstruct ICT integration in schools. Enablers may include robust ICT infrastructure, well-trained teachers, and supportive administrative policies, while barriers could involve insufficient teacher training, outdated technology, or socio-economic disparities.
 
-By pinpointing specific barriers, policymakers can implement targeted initiatives to address them, such as expanding teacher training programs or developing supportive policies. Removing these barriers supports more effective technology integration, enabling students to benefit from ICT resources and enhancing their overall learning outcomes, especially in digital skills essential for future job markets.
+By analyzing in-school and outside-the-classroom environments, the study pinpoints where and why ICT integration succeeds or fails. These findings will enable policymakers and educational stakeholders to address specific barriers—such as enhancing teacher training programs or providing targeted support to under-resourced schools—thereby fostering a more effective and inclusive use of ICT in education.
 
 **3. Analyze the relationship between ICT utilization and student performance on established educational benchmarks, using Plausible Values (PVs) and appropriate statistical models.**
 
-This objective explores how ICT usage correlates with academic performance across different socio-economic and geographic backgrounds, highlighting the role of ICT in bridging or widening educational inequalities. By examining this relationship, the study can determine whether ICT access is genuinely beneficial to student achievement or if disparities in usage contribute to unequal outcomes.
+This objective evaluates how ICT access and use correlate with student academic outcomes, such as performance on PISA assessments. By leveraging PISA outputs (e.g., cognitive learning outcomes, ICT competencies, and well-being), the study explores whether ICT enhances educational achievement and identifies variations across socio-economic, geographic, and demographic backgrounds.
 
-The results can guide policies aimed at reducing educational inequalities by improving ICT access for underserved groups, such as students in rural areas or from lower socioeconomic backgrounds. For instance, if ICT access is found to improve PISA performance, targeted support for disadvantaged students could be a powerful equalizer, potentially enhancing overall national performance on educational benchmarks.
+The analysis aims to determine whether ICT serves as a bridge to reduce educational inequalities or whether disparities in ICT access exacerbate existing inequities. Insights gained will inform strategies to promote equitable ICT use, ensuring that all students—regardless of background—benefit from technology to improve academic performance and digital skills.
 
 **4. Provide evidence-based recommendations to policymakers for enhancing ICT acceptance and utilization in Thai education.**
 
-Evidence-based recommendations can drive sustainable improvements in ICT use across Thai schools, addressing both systemic (CIPO model) and behavioral (MLFTAU) factors. These recommendations help ensure that the integration of ICT not only aligns with national goals but also supports enhanced educational equity and outcomes.
+This objective synthesizes the study’s findings to develop actionable, evidence-based recommendations for improving ICT adoption and integration. By addressing both systemic factors (analyzed through the PISA frameworks) and behavioral drivers (captured by the MLFTAU), the recommendations will focus on sustainable improvements that align with Thailand’s strategic educational goals.
 
-This objective synthesizes findings into actionable guidance, such as recommending specific infrastructure improvements, training initiatives, or policies that promote equitable ICT access. It can also propose frameworks for ongoing assessment and adjustment, ensuring that ICT policies remain responsive to emerging challenges and changing educational needs.
+Potential recommendations include infrastructure upgrades, targeted teacher training programs, and supportive policies to enhance ICT acceptance and equitable access. Additionally, the study will propose frameworks for ongoing monitoring and assessment to ensure ICT policies remain responsive to emerging challenges and evolving educational needs.
 
-To clarify how each research objective aligns with the study’s analytical frameworks, the following table maps each objective to the relevant dimensions of the CIPO model—Context, Input, Process, and Output—and the Multi-Level Framework of Technology Acceptance and Use (MLFTAU). Additionally, it distinguishes between in-school and outside-the-classroom contexts, reflecting the dual environment in which ICT influences student learning. This multi-layered approach underscores the study's comprehensive analysis of ICT integration by examining both structural factors within educational systems and behavioral factors that affect individual technology acceptance. By situating each objective within this combined framework, the table provides a visual guide to the study’s scope, illustrating how it addresses ICT’s role in enhancing educational outcomes in Thailand across different settings.
+**Alignment with Analytical Frameworks**
+
+To clarify how each research objective aligns with the study’s analytical frameworks, the following table maps each objective to the relevant dimensions of PISA's CIPO model (Context, Input, Process, and Output) and the Multi-Level Framework of Technology Acceptance and Use (MLFTAU). Additionally, it distinguishes between in-school and outside-the-classroom contexts, reflecting the dual environment in which ICT influences student learning. This multi-layered approach underscores the study's comprehensive analysis of ICT integration by examining both structural factors within educational systems and behavioral factors that affect individual technology acceptance. By situating each objective within this combined framework, the table provides a visual guide to the study’s scope, illustrating how it addresses ICT’s role in enhancing educational outcomes in Thailand across different settings.
 
 ```{r, mapping_objectives_to_CIPO_and_MLFTAU_frameworks, echo=FALSE}
 library(knitr)
@@ -152,12 +382,12 @@ library(kableExtra)
 library(dplyr)
 
 # Read the CSV file
-data <- read.csv("data/metadata/PISA_&_MLFTAU_construct_data/mapping_objectives_to_CIPO_and_MLFTAU_frameworks.csv")
+data <- read.csv("data/metadata/PISA_&_MLFTAU_construct_data/mapping_objectives_to_pisa_and_mlftau_frameworks.csv")
   
 kable(data, align = "l", 
-      caption = "Mapping Research Objectives to CIPO and MLFTAU Framework Dimensions",
+      caption = "Mapping Research Objectives to PISA and MLFTAU Framework Dimensions",
       col.names = c("Objective", 
-                    "CIPO Framework \\ Dimension", 
+                    "PISA Framework \\ Dimension", 
                     "MLFTAU \\ Dimension", 
                     "Explanation"),
       escape = FALSE) %>%
@@ -168,16 +398,46 @@ kable(data, align = "l",
   column_spec(4, width = "7cm")
 ```
 
-The potential of this research extends beyond national boundaries, echoing the global challenges of digital technology integration within educational systems. By delineating Thailand's experience, insights of broader relevance are revealed, contributing to the international discourse on educational technology and its implementation in diverse cultural and economic contexts.
+While this study focuses on ICT integration in Thai education, its findings contribute to the broader international discourse on educational technology. The study highlights the systemic and behavioral factors that influence ICT adoption and its impacts on learning outcomes, providing insights relevant to countries facing similar challenges in digital technology implementation.
+
+With these frameworks as the foundation, the subsequent section outlines the methodology employed to operationalize these concepts.
 
 # Methodology
-This research employs a quantitative approach, leveraging secondary data from sources including the PISA assessments and national statistics to analyze the role of Information and Communications Technology (ICT) in shaping educational outcomes in Thailand. Two guiding frameworks are central to this study: the PISA ICT Framework, which is based on the CIPO model (Context, Input, Process, Output), and the Multi-Level Framework of Technology Acceptance and Use (MLFTAU). 
 
-The PISA ICT Framework provides a structural perspective on ICT integration within educational practices, examining contextual, input, process, and output factors. In contrast, the MLFTAU offers insights into the behavioral and psychological factors influencing ICT acceptance and usage among students and educators. Together, these frameworks allow for a comprehensive analysis of both systemic and individual factors affecting ICT’s impact on education.
+This research adopts a quantitative approach, utilizing secondary data from the Programme for International Student Assessment (PISA) and national educational datasets to explore the role of Information and Communications Technology (ICT) in shaping educational outcomes in Thailand. Central to this study are two guiding frameworks: the PISA ICT Framework and the Multi-Level Framework of Technology Acceptance and Use (MLFTAU). These frameworks enable a dual focus: the systemic factors shaping ICT integration and the behavioral and psychological dimensions of ICT acceptance and usage.
 
-To comprehensively assess the impact of ICT on student performance, this study focuses on core variables such as ICT access, usage patterns, and educational outcomes. Analytical techniques, including regression models and hierarchical linear modeling, will be applied to examine these relationships, with Plausible Values (PVs) from PISA data utilized to account for measurement uncertainty in student performance. By addressing both systemic and individual dimensions, this methodology aims to generate nuanced and actionable insights, informing policymakers on effective strategies to enhance ICT integration and reduce educational disparities.
+The PISA ICT Framework evaluates ICT integration through four dimensions—context, input, process, and output—providing a structural lens to assess the educational environment and its relationship with ICT use. By contrast, the MLFTAU Framework emphasizes behavioral factors influencing ICT adoption, such as performance expectancy, facilitating conditions, and social influence, across multiple levels: individual, group/class, organization/school, and organization/family. Together, these frameworks facilitate a comprehensive examination of ICT’s systemic and individual dimensions, identifying both enablers and barriers to ICT-driven educational improvements.
 
-## Data Sources
+**Methodological Contributions**
+
+This study bridges these frameworks and aligns variables for robust analysis through the following methodological contributions:
+
+- Variable Mapping Table A central methodological tool, the variable mapping table aligns variables across the PISA ICT Framework and MLFTAU domains and constructs. It ensures consistency in analysis and addresses gaps where MLFTAU lacks explicit learning outcomes by incorporating PISA outputs (e.g., cognitive learning outcomes, ICT competencies).
+
+- Borrowing Outputs from PISA: Recognizing the absence of explicit outputs in MLFTAU, this study integrates PISA outputs as proxies for ICT outcomes, ensuring alignment with educational research practices and enabling a holistic evaluation of ICT’s impact.
+
+- Dual-Labeling Variables: Variables that play multifaceted roles (e.g., in both process and output dimensions) are dual-labeled to accurately capture their complexity while maintaining analytical rigor.
+
+- Criteria for Variable Inclusion/Exclusion: Variables irrelevant to ICT, or those lacking alignment with the frameworks, are systematically excluded to maintain a sharp focus on the study’s objectives.
+
+The methodology incorporates advanced statistical techniques, including regression modeling and hierarchical linear modeling, to explore relationships between ICT access, usage patterns, and educational outcomes. Plausible Values (PVs) from PISA data are employed to account for measurement uncertainty and the complex sampling design of the assessment.
+
+**Proprietary Data Handling**
+
+To protect the intellectual property developed in this research—including refined datasets, mapping tables, and analytical models—certain outputs are designated as proprietary. While the datasets do not contain identifiable student information, they represent significant intellectual effort in cleaning, transforming, and aligning variables across frameworks. All proprietary data files, including processed datasets and intermediate outputs, are stored in the data/private directory, which is excluded from public repositories via .gitignore.
+
+However, scripts used for data processing are publicly accessible and documented to ensure transparency, reproducibility, and potential collaborative use. Researchers interested in accessing proprietary datasets and models are encouraged to reach out to explore opportunities for academic collaboration.
+
+**Study Scope and Phased Approach**
+
+The study begins with the 2022 PISA dataset, focusing on refining data cleaning and transformation processes. This phased approach allows for the early publication of findings and facilitates longitudinal comparisons across earlier PISA cycles (2000–2018).
+
+By aligning the systemic focus of the PISA ICT Framework with the behavioral insights of MLFTAU, this methodology provides a comprehensive framework for analyzing the interplay between ICT integration, acceptance, and educational outcomes. The structured and transparent approach aims to generate actionable insights for policymakers and educators, addressing critical gaps in understanding how ICT impacts educational equity and performance.
+
+The following sections outline the detailed steps taken to prepare, clean, and analyze the PISA dataset, ensuring rigorous alignment with the study's objectives.
+
+## Data Import and Setup
+
 To conduct this analysis, the study leverages several key datasets.
 
 Programme for International Student Assessment (PISA): Data from the PISA assessments for 2000, 2003, 2006, 2009, 2012, 2015, 2018, and 2022 will be utilized. These datasets provide student performance data in reading, mathematics, science, and creative thinking, as well as contextual information from student and school questionnaires. The study will focus on ICT-related variables as captured in the PISA surveys.
@@ -186,7 +446,6 @@ Thai National Educational Datasets: Additional data from the National Statistica
 
 These datasets collectively enable a robust analysis of ICT’s impact on educational outcomes across different contexts in Thailand. The PISA dataset, in particular, includes Plausible Values (PVs) and weights, ensuring that analysis reflects the complex sampling design used in the assessment.
 
-## Data Import and Setup
 The PISA data for analysis is imported using the intsvy package, which is specifically recommended by the OECD for handling PISA data. This package is tailored for large-scale international assessments, allowing for the use of plausible values (PVs) and survey weights to account for the complex sampling design employed in these assessments. The PISA datasets used in this research include Thai-specific data from multiple cycles (e.g., 2000, 2003, 2006, 2009, 2012, 2015, 2018, and 2022), along with supplementary data from the National Statistical Office of Thailand and other relevant sources. Proper data import and preparation are essential to ensure that the analysis is based on clean, structured data.
 
 The original Thailand-specific PISA dataset from PISA Thailand is provided in CSV format, which is compatible with intsvy and allows for efficient processing without further conversion. The CSV files are organized within the data/raw/ folder by cycle year, maintaining a clear and organized version history for multi-year analysis.
@@ -282,182 +541,413 @@ cat(sprintf("The %s dataset contains %d rows and %d columns.\n", year, data_dim[
 head(pisa_data, 10)
 ```
 
-The PISA 2022 Thailand dataset provides a structured array of variables categorized by prefixes to represent different dimensions of educational data. Key identifiers include variables with the CNT prefix, such as CNTRYID (Country Identifier), CNTSCHID (School ID), and CNTSTUID (Student ID), which are essential for distinguishing observations by country, school, and student.
+The PISA 2022 Thailand dataset provides a structured array of variables categorized by prefixes to represent different dimensions of educational data. Key identifiers include metadata variables with the CNT prefix, such as CNTRYID (Country Identifier), CNTSCHID (School ID), and CNTSTUID (Student ID), which are essential for distinguishing observations by country, school, and student.
 
-Student responses (ST-prefixed variables) capture individual data, while ICT-related variables (IC prefix) provide insights into technology access and use. School questionnaire variables (SCH prefix) include institutional characteristics and policies that may influence educational outcomes. This foundational structure, combined with supplementary data from additional PISA cycles and the National Statistical Office, will enable a comprehensive examination of factors influencing educational outcomes in Thailand.
+Student responses (ST-prefixed variables) capture individual-level data, such as demographic information, attitudes, and self-reported behaviors. ICT-related variables (IC prefix) provide insights into students' access to and use of technology. School questionnaire variables (SCH prefix) include institutional characteristics, policies, and practices that may influence educational outcomes.
+
+In addition to raw variables, the dataset includes PISA-derived variables, such as aggregates, averages, and indices, which summarize data at the student, school, and country levels. These derived variables offer valuable insights into trends and relationships that might not be evident in raw data. For example, indices like ICTCOMP measure students' ICT competencies, while aggregate variables provide school- or country-level averages of key metrics.
+
+Plausible Values (PVs) are a critical component of the dataset, capturing student performance across domains (e.g., reading, mathematics, science, and creative thinking). PVs represent multiple imputed scores per student, accounting for the uncertainty inherent in large-scale assessments. This methodology ensures that analyses based on PVs are both robust and reflective of the underlying data's complexity.
+
+The dataset also incorporates survey weights (e.g., W_FSTUWT for students and W_SCHWT for schools), which are essential for producing nationally representative estimates. These weights adjust for the complex sampling design used in PISA, ensuring that statistical inferences are valid and unbiased.
+
+This foundational structure, combined with supplementary data from additional PISA cycles and the National Statistical Office of Thailand, provides a robust framework for examining the systemic and individual factors influencing educational outcomes in Thailand. By integrating raw variables, derived metrics, PVs, and weights, this study can address both micro- and macro-level research questions with methodological rigor.
 
 ## Data Preparation and Cleaning
+
 Since this study focuses exclusively on Thailand, only Thailand-specific data files provided by PISA Thailand were used, eliminating the need to filter out data from other countries. This targeted dataset selection simplifies storage requirements and streamlines file handling, allowing for efficient data management across multiple PISA cycles (i.e., 2000, 2003, 2006, 2009, 2012, 2015, 2018, and 2022).
 
-With the data imported and initial structure checks completed, the next steps involve preparing the data for analysis. This includes handling plausible values (PVs) and weights, addressing missing data, and performing any necessary transformations to ensure a clean and structured dataset.
+This research employs a phased approach, starting with the cleaning and preparation of the 2022 dataset. This allows for the refinement of methods and processes before extending the workflow to previous PISA cycles. The initial focus on 2022 also enables early analysis and publication of findings, fulfilling partial requirements for the PhD while providing actionable insights based on recent data. Once the 2022 dataset is fully cleaned and prepared, the process will be extended to earlier years to identify trends over time.
 
-**Handling of Plausible Values (PVs) and Weights** 
+The phased approach offers several advantages:
 
-The PISA dataset includes Plausible Values (PVs) for student achievement scores in reading, mathematics, science, and creative thinking. PVs are multiple imputed estimates of students’ latent abilities rather than exact scores, which means they are essential for accurate statistical inferences and valid comparisons across student groups. Unlike single point estimates, PVs account for measurement error by providing a range of estimates, enhancing the validity of inferences drawn from these scores. For this study, PVs will be applied in all analyses involving student performance, aligning with best practices in large-scale assessments to ensure robust statistical conclusions.
+- Focused Development: By working on the 2022 dataset first, the cleaning and transformation scripts can be optimized without the added complexity of handling multiple datasets simultaneously.
 
-Additionally, survey weights are provided in the PISA dataset to adjust for the complex sampling designs used, ensuring the sample accurately represents the broader population. Since PISA employs stratified sampling to capture diverse student populations, applying these weights corrects for selection probability differences, allowing for generalizable and unbiased parameter estimates. Weights are particularly critical in maintaining statistical rigor in this study, as they ensure that results are representative of Thailand’s student population. In all analyses involving PVs, the corresponding survey weights will be applied to control for sampling biases and uphold the validity of statistical inferences.
+- Incremental Publishing: Initial findings based on the 2022 dataset will provide an early contribution to the academic community while enabling feedback and potential collaboration.
 
-**Missing Data Handling** 
+- Scalability: After validating the methodology with the 2022 data, the process can be applied to earlier datasets with confidence, leveraging the established workflows for consistency.
 
-Missing data is a common issue in large-scale assessments like PISA, where students may skip questions or fail to complete the survey. Proper handling of missing data is crucial to maintain the representativeness of the sample and ensure the validity of the results. In this section, various methods are employed to address missing data, following OECD recommendations and best practices in educational research.
+- Longitudinal Insights: Once data across cycles are cleaned and prepared, the study will uncover longitudinal patterns and trends, enriching its contribution to the field.
 
-To ensure a thorough understanding of the missing data across multiple years of PISA data, missing data summaries were generated for each specified year using the coding below. For each variable, the percentage of missing values was calculated, with results saved in separate CSV files organized by year within the metadata/missing_data_summaries folder. Each file is named according to the format missing_pisa_data_summary_[year].csv, providing a structured overview of missing data without overloading this document with detailed output. Readers interested in the complete summaries for each year can refer to the CSV files in the scripts folder.
+The cleaning process will address key issues, such as handling missing data, removing irrelevant variables, and ensuring consistency across datasets. The Variable Mapping Table developed as part of this study will guide the cleaning process, ensuring alignment with the PISA ICT Framework and MLFTAU while maintaining methodological rigor.
 
-```{r, eval=FALSE}
-# List of PISA years to process
-years <- c(2000, 2003, 2006, 2009, 2012, 2015, 2018, 2022)
+Additionally, specific challenges associated with PISA data, such as handling Plausible Values and applying survey weights, will be addressed during the cleaning process. These steps are critical for ensuring the robustness and validity of the analysis.
 
-# Function to dynamically load PISA data for a given year
-load_pisa_data <- function(year) {
-    csv_path <- paste0("data/raw/", year, "/pisa", year, "_data.csv")
-    pisa_data <- read.csv(csv_path)
-    return(pisa_data)
-}
+The workflows and processes described below are designed with flexibility and scalability in mind, allowing seamless extension to additional datasets in subsequent phases.
 
-# Loop through each year to calculate missing data summaries and save to metadata folder
-for (year in years) {
-    # Load data for the specific year
-    pisa_data <- load_pisa_data(year)
-    
-    # Calculate percentage of missing data for each variable
-    missing_data_summary <- sapply(pisa_data, function(x) sum(is.na(x)) / length(x) * 100)
-    missing_data_summary <- data.frame(Variable = names(missing_data_summary),
-                                       Missing_Percentage = missing_data_summary)
-    
-    # Define year-specific folder path in metadata/missing_data_summaries
-    year_folder <- paste0("data/metadata/missing_data_summaries/", year)
-    if (!dir.exists(year_folder)) {
-        dir.create(year_folder, recursive = TRUE)
-    }
-    
-    # Save missing data summary as a CSV file in the appropriate year subfolder
-    summary_file <- paste0(year_folder, "/missing_pisa_data_summary_", year, ".csv")
-    write.csv(missing_data_summary, summary_file, row.names = FALSE)
-}
+### Metadata and Response Summaries
+
+To support rigorous data preparation, analysis, and documentation, two key tools were developed: the variable mapping table and the questionnaire response summary. These resources enhance the transparency, consistency, and analytical depth of the research process, while also providing a systematic basis for aligning the study’s frameworks. Due to their significant intellectual value, both tools are treated as proprietary and stored in a secure location outside public repositories.
+
+**1. PISA 2022 Variable Mapping Table**
+
+The variable mapping table is a comprehensive metadata resource that consolidates essential information about each variable in the dataset. It serves as a critical reference for understanding variable content, alignment with theoretical frameworks, and their intended analytical roles. Key features of the mapping table include:
+
+- Original Variable Name: The variable name as it appears in the raw dataset.
+
+- Renamed Variable: A descriptive and user-friendly name for improved clarity during analysis.
+
+- Variable Description: A concise explanation of the variable’s content or purpose, sourced primarily from the PISA codebook.
+
+- Data Source: The origin of the variable (e.g., student questionnaire, school questionnaire).
+
+- Year: The PISA cycle year (e.g., 2022).
+
+- Missing Data Percentage: The proportion of missing values, calculated during the data preparation phase.
+
+- Framework Alignment: Comprehensive mapping of each variable to the PISA ICT Framework domains and constructs, as well as the Multi-Level Framework of Technology Acceptance and Use (MLFTAU), with adjustments where necessary to address theoretical gaps.
+
+A key intellectual effort in developing the mapping table was aligning variables across three frameworks: the PISA ICT Framework (In-School and Outside-the-Classroom) and the MLFTAU. This alignment involved:
+
+- **Domain and Construct Mapping**: Each variable was evaluated and categorized under the relevant PISA ICT domains (context, input, process, and output) and constructs (e.g., school ICT infrastructure, students’ ICT usage patterns). Variables were also aligned with MLFTAU domains (e.g., individual, organizational, and societal levels) and constructs (e.g., performance expectancy, facilitating conditions, and social influence).
+
+- **Integrating PISA Outputs into MLFTAU**: Recognizing that the MLFTAU lacks explicitly defined learning outcomes, this study borrowed measurable PISA outputs of cognitive learning outcomes and ICT competencies and well-being and aligned them with MLFTAU constructs like performance expectancy to provide a robust method for assessing the impact of ICT use.
+
+- **Dual-Labeling**: Variables that spanned both process and output dimensions were dual-labeled to capture their multifaceted roles across the frameworks. This approach ensures consistency while preserving the nuanced analytical potential of these variables.
+
+The mapping table supports the study's analytical goals by providing a transparent and structured methodology for reconciling the strengths of the PISA ICT and MLFTAU frameworks. It is stored securely in the following location:
+
+data/private/metadata/2022/pisa2022_variable_mapping_table.csv
+
+**2. PISA 2022 Questionnaire Response Summary with Mapping**
+
+The questionnaire response summary complements the variable mapping table by providing detailed response-level summaries for all included variables. This resource integrates metadata from the mapping table and presents response distributions for each variable, offering additional context for data validation and exploration. Key attributes include:
+
+- Cleaned Variable Name: The updated variable name after initial data cleaning.
+
+- Metadata Columns: Contextual details from the mapping table (e.g., original variable name, renamed variable, variable description).
+
+- Response Values and Labels: Each possible response for the variable and its corresponding description (e.g., "1 = Yes," "2 = No").
+
+- Response Frequency: The count of each response value.
+
+- Response Percentage: The proportion of each response value relative to the total responses for the variable.
+
+The response summary is essential for identifying irregularities, such as unexpected response patterns or high rates of missing data, and for confirming that response distributions align with the study’s theoretical and analytical expectations. By integrating metadata from the mapping table, the summary ensures that response patterns are interpretable within the context of the frameworks.
+
+### Initial Handling of Missing Data
+
+Addressing missing data is a critical step in large-scale assessments like PISA, where data completeness can significantly affect the validity and representativeness of results. This section outlines the initial cleaning process for the 2022 PISA dataset, conducted in accordance with OECD recommendations and established best practices in educational research.
+
+The initial cleaning process involved generating a missing data summary, identifying variables with 100% missing data, and excluding variables deemed irrelevant to the analysis, such as those specific to the well-being questionnaire not used in Thailand. The results of this process are documented and saved in proprietary directories to safeguard sensitive data.
+
+The following steps were applied during this initial cleaning process:
+
+1. **Generating Missing Data Summaries:** A summary of the percentage of missing values for each variable was created. This summary provides an overview of data completeness and helps identify variables with high levels of missing data.
+
+2. **Removing Variables with 100% Missing Data:** Variables with no valid data were identified and excluded from further analysis.
+
+3. **Excluding Irrelevant Variables:** Variables related to the well-being questionnaire, which were not applicable to the Thai context, were removed.
+
+4. **Documenting Changes:** A detailed log of removed variables, including their names and reasons for exclusion (e.g., 100% missing data or irrelevance), was created for transparency.
+
+5. **Saving Outputs:** Both the cleaned dataset and the cleaning log were saved in proprietary directories to ensure intellectual property protection.
+
+The cleaned dataset and the cleaning log are saved in the following proprietary locations:
+
+- **Cleaned dataset:** data/private/processed/2022/pisa2022_cleaned_1_initial_data_removal.csv
+
+- **Cleaning log:** data/private/metadata/2022/stage1_cleaning_log_2022.csv
+
+```{r initial_data_removal_script, eval=FALSE}
+# Source the script for initial data removal
+# This script automates the removal of irrelevant variables and those with high missingness, while ensuring the resulting dataset remains proprietary and is used exclusively for academic research.
+source("scripts/2022/pisa2022_cleaned_1_initial_data_removal.R")
 ```
 
-The code below processes the PISA data for each specified year, identifies and removes variables with 100% missing data, and saves the cleaned datasets in the pre-existing year-specific folders within `data/processed/`. Each cleaned file is named `cleaned_pisa_data_[year].csv`. This approach maintains an organized structure for multi-year data analysis, storing each year's cleaned data in its respective folder for easy reference and subsequent analysis.
+The initial handling of missing data sets a strong foundation for subsequent analyses by:
+
+- Ensuring the dataset's integrity by excluding uninformative or irrelevant variables.
+
+- Maintaining transparency through a well-documented cleaning log.
+
+- Aligning with intellectual property requirements by securing sensitive outputs in private directories.
+
+By following this systematic and transparent approach, the initial cleaning stage ensures data quality, relevance, and compliance with ethical and academic standards in data management.
+
+### Transformations and Standardizations
+
+The next stage of the cleaning process focuses on ensuring the dataset is ready for analysis by systematically standardizing, transforming, and addressing inconsistencies in the PISA 2022 dataset. This stage builds upon both the initial data removal dataset (pisa2022_cleaned_1_initial_data_removal.csv) and the variable mapping table (pisa2022_variable_mapping_table.csv) created during the Metadata and Response Summaries section.
+
+The primary goals of this stage are:
+
+1. To harmonize variable values and align them with PISA standards.
+
+2. To systematically rename variables for clarity and consistency based on the existing variable mapping table.
+
+3. To ensure alignment with the analytical objectives by further refining the mapping table.
+
+The following transformations and standardizations were applied:
+
+1. Country-specific response codes that deviated from PISA standards were harmonized:
+
+> - Values like 7640001, 7640002, 7640003, and 7640004 were mapped to 1, 2, 3, and 4.
+
+> - 9999999 (Missing) was standardized to 99 to align with PISA's conventions.
+
+2. Valid Skip and Not Applicable codes were adjusted:
+
+> - 5 (Valid Skip) was transformed to 95.
+
+> - 4 (Not Applicable) was transformed to 97 where applicable.
+
+3. Invalid responses were harmonized:
+
+> - Responses coded as 998 (e.g., SC175Q01JA) were standardized to 99998 for consistency across the dataset.
+
+4. Variables were renamed using the Variable Mapping Table:
+
+> - The variable mapping table created earlier was further refined and applied to rename variables in the dataset.
+
+> - Process: Any missing or generic names in the renamed_variable column were replaced with values from original_variable_name. For example:
+
+>> - ST305Q01JA was renamed to leadership_comfortable.
+
+>> - IC170Q01JA was renamed to use_computer_school.
+
+5. The Variable Mapping Table was expanded:
+
+> - The existing mapping table was updated with additional metadata and transformations. This included:
+
+>> - Flags indicating whether a variable required transformation.
+
+>> - New descriptive labels for renamed variables where previous placeholders existed.
+
+Below is an example illustrating the original and renamed variables for a random selection from the student questionnaire:
+
+```{r variable renaming, echo=FALSE}
+library(knitr)
+library(kableExtra)
+
+# Read the CSV file
+data <- read.csv("data/interim/documentation_tables/pisa2022_variable_renaming.csv")
+
+# Create and style the table
+kable(data, align = "l", caption = "Example of Variable Renaming Process for PISA 2022 Data") %>%
+  kable_styling(position = "center", full_width = FALSE, latex_options = "scale_down") %>%
+  column_spec(1, width = "3cm") %>% # Column for original variable name
+  column_spec(2, width = "4cm") %>% # Column for renamed variable
+  column_spec(3, width = "8cm")     # Column for description
+```
+
+**Implementation and Outputs**
+
+The transformations were implemented using R. The process involved:
+
+1. Reading the variable mapping table from the proprietary directory:
+
+>> data/private/metadata/2022/pisa2022_variable_mapping_table.csv
+
+2. Applying transformations and standardizations to the dataset using the mapping table.
+
+3. Saving the updated mapping table to:
+
+>> data/private/metadata/2022/pisa2022_variable_mapping_table_updated.csv
+
+4. Saving the cleaned and transformed dataset to:
+
+>> data/private/processed/2022/pisa2022_cleaned_2_transformation_and_standardization.csv
+
+These transformations ensured the dataset adhered to a uniform structure and eliminated discrepancies arising from country-specific customizations or inconsistent codes.
+
+The following code was used to perfrom the transformations described above and create the second iteration of the cleaned dataset:
+
+```{r transformation and standardization, eval=FALSE}
+# Load required libraries
+library(dplyr)
+
+# Load the Stage 1 Cleaned Dataset
+data_stage1 <- read.csv("data/private/processed/2022/pisa2022_cleaned_1_initial_data_removal.csv")
+
+# Define the response mapping for customized questions
+response_mapping <- list(
+  "7640001" = 1,  # None
+  "7640002" = 2,  # One
+  "7640003" = 3,  # Two
+  "7640004" = 4,  # Three or more
+  "9999999" = 99  # Missing
+)
+
+# List of customized questions to standardize
+customized_questions <- c("ST250D06JA", "ST250D07JA", "ST251D08JA", "ST251D09JA", "ST330D10WA")
+
+# Standardize responses for customized questions
+data_stage2_step1 <- data_stage1 %>%
+  mutate(across(
+    all_of(customized_questions),
+    ~ as.numeric(as.character(response_mapping[as.character(.)]))
+  ))
+
+# Adjust responses for SC175Q01JA (transform 998 to 99998 for consistency)
+data_stage2_step1 <- data_stage2_step1 %>%
+  mutate(
+    SC175Q01JA = ifelse(SC175Q01JA == 998, 99998, SC175Q01JA)
+  )
+
+# Adjust responses for STUBMI (transform 999 to 99 for consistency)
+data_stage2_step1 <- data_stage2_step1 %>%
+  mutate(
+    STUBMI = ifelse(STUBMI == 999, 99, STUBMI)
+  )
+
+# Transform 5 to 95 for Valid Skip in specific variables
+valid_skip_variables <- c(
+  "SC035Q01NA", "SC035Q01NB", "SC035Q02TA", "SC035Q02TB",
+  "SC035Q03TA", "SC035Q03TB", "SC035Q04TA", "SC035Q04TB",
+  "SC035Q05TA", "SC035Q05TB", "SC035Q06TA", "SC035Q06TB",
+  "SC035Q07TA", "SC035Q07TB", "SC035Q08TA", "SC035Q08TB",
+  "SC035Q09NA", "SC035Q09NB", "SC035Q10TA", "SC035Q10TB",
+  "SC035Q11NA", "SC035Q11NB"
+)
+
+data_stage2_step1 <- data_stage2_step1 %>%
+  mutate(across(
+    all_of(valid_skip_variables),
+    ~ ifelse(. == 5, 95, .)
+  ))
+
+# Transform 4 to 97 for Not Applicable in specific variables
+not_applicable_variables <- c("SC177Q01JA", "SC177Q02JA", "SC177Q03JA")
+
+data_stage2_step1 <- data_stage2_step1 %>%
+  mutate(across(
+    all_of(not_applicable_variables),
+    ~ ifelse(. == 4, 97, .)
+  ))
+
+# Load the variable mapping table
+variable_mapping <- read.csv("data/private/metadata/2022/pisa2022_variable_mapping_table.csv")
+
+# Replace NA values in renamed_variable with the corresponding original_variable_name
+variable_mapping$renamed_variable[is.na(variable_mapping$renamed_variable)] <- 
+  variable_mapping$original_variable_name
+
+# Rename variables in the dataset using the mapping table
+names(data_stage2_step1) <- variable_mapping$renamed_variable[
+  match(names(data_stage2_step1), variable_mapping$original_variable_name)
+]
+
+# Save the resulting transformation and standardizationdataset
+write.csv(
+  data_stage2_step1,
+  "data/private/processed/2022/pisa2022_cleaned_2_transformation_and_standardization.csv",
+  row.names = FALSE
+)
+
+cat("Stage 2 Step 1 dataset saved to: data/processed/2022/pisa2022_cleaned_2_transformation_and_standardization.csv\n")
+```
 
 ```{r}
-# Load necessary libraries
-library(dplyr)
-library(readr)
-
-# Function to dynamically load the PISA data for a specified year
-load_pisa_data <- function(year) {
-    # Define file path dynamically
-    csv_path <- paste0("data/raw/", year, "/pisa", year, "_data.csv")
-    # Read the CSV
-    pisa_data <- read_csv(csv_path)
-    return(pisa_data)
-}
-
-# List of years you have PISA data for
-years <- c(2000, 2003, 2006, 2009, 2012, 2015, 2018, 2022)
-
-# Loop through each year, load the data, clean it, and save the result
-for (year in years) {
-    # Load data for the specified year
-    pisa_data <- load_pisa_data(year)
-    
-    # Calculate the percentage of missing data for each variable
-    missing_data_summary <- sapply(pisa_data, function(x) sum(is.na(x)) / length(x) * 100)
-    missing_data_summary <- data.frame(Variable = names(missing_data_summary), 
-                                       Missing_Percentage = missing_data_summary)
-    
-    # Identify variables with 100% missing data
-    high_missing_summary <- missing_data_summary %>%
-      filter(Missing_Percentage == 100)
-    
-    # Remove variables with 100% missing data
-    cleaned_data <- pisa_data %>% select(-one_of(high_missing_summary$Variable))
-    
-    # Save the cleaned dataset in the appropriate processed year folder
-    output_path <- paste0("data/processed/", year, "/pisa", year, "_cleaned_stage1.csv")
-    write_csv(cleaned_data, output_path)
-    
-    # Print a message confirming the process for each year
-    cat(sprintf("Year %d: Removed %d variables with 100%% missing data. Cleaned data saved to %s\n", 
-                year, nrow(high_missing_summary), output_path))
-}
+# Source the transformation and standardization script
+# This script automates the transformation and standardization of variables, while ensuring the resulting dataset remains proprietary and is used exclusively for academic research.
+source("scripts/2022/pisa2022_cleaned_2_transformation_and_standardization.R")
 ```
 
-For a complete list of variables with high missing percentages, please refer to the supplementary file [Missing Data Summary](data/metadata/missing_data_summary.csv).
+### Variable Harmonization Across Cycles
 
+**Note:** This subsection will be completed in subsequent phases of the project when data from earlier PISA cycles (2000–2018) are incorporated. It will detail the process of aligning variable names, response options, and constructs across cycles to ensure consistency and comparability in longitudinal analyses.
 
+### Summary and Next Steps
 
-**Variable Transformation**
+The data preparation and cleaning process for this study began with a targeted focus on the 2022 PISA dataset, which was selected specifically for Thailand. This approach simplified data management and optimized storage by excluding data from other countries, and allowed for a more streamlined process in handling multiple years of PISA data. A phased approach was adopted, starting with the 2022 dataset to refine the cleaning and transformation processes before expanding to earlier cycles. This method ensures that the workflows developed for 2022 can be applied consistently across earlier datasets, facilitating a more robust longitudinal analysis.
 
-Detail any modifications or transformations applied to the variables.
-Provide the R code for these transformations.
+To enhance the transparency and rigor of the data preparation, key tools such as the PISA 2022 Variable Mapping Table and the Questionnaire Response Summary with Mapping were created. These resources ensure that the variables are clearly defined and aligned with the theoretical frameworks of the study—namely the PISA ICT Framework and the Multi-Level Framework of Technology Acceptance and Use (MLFTAU). The variable mapping process also addressed complex data issues such as Plausible Values (PVs) and survey weights, critical for ensuring the robustness and validity of subsequent analyses.
 
-**Descriptive Analysis**
+In terms of the specific challenges in data cleaning, the initial focus was on handling missing data, removing irrelevant variables, and harmonizing variable names and values to align with established PISA conventions. These efforts were particularly important for ensuring the consistency and comparability of the 2022 dataset with previous cycles, a process that will be extended once the 2022 dataset has been fully cleaned.
 
-Present basic statistics or visualizations to describe the data.
-Include the R code generating these descriptive statistics.
+Moving forward, the next steps are outlined as follows:
+
+- Once the 2022 dataset is fully cleaned and validated, the same cleaning and transformation processes will be applied to earlier PISA cycles (2000-2018). This will enable the study to capture longitudinal trends and provide a broader analysis of ICT’s impact on educational outcomes over time.
+
+- The next stage of the project will focus on harmonizing the variables, response categories, and constructs across multiple PISA cycles. This step is crucial for ensuring comparability between years and will provide insights into the evolution of ICT integration in Thai education.
+
+- As the cleaning processes continue, special attention will be given to missing data, particularly focusing on the reasons behind missingness and its impact on the validity of the results. Statistical methods such as imputation and reweighting will be explored if necessary to address missing data patterns across multiple years.
+
+- The Variable Mapping Table will be continually updated to reflect additional insights as new datasets are incorporated. The alignment of PISA variables with the MLFTAU will also be refined as additional years of data are included in the analysis, ensuring that the results maintain both theoretical rigor and practical relevance.
+
+These next steps will allow for a comprehensive and systematic analysis of ICT’s role in enhancing educational outcomes, grounded in the integration of both PISA’s ICT framework and the MLFTAU. Through this phased and methodologically rigorous approach, the study aims to provide actionable insights for policymakers and educators, particularly regarding how ICT can be better integrated into Thailand’s education system to bridge existing digital divides.
 
 ## Variable Selection
-The selection of variables for analysis in this study was conducted with a systematic approach rooted in the theoretical foundations as stipulated by the PISA ICT Framework and the MLFTAU. Each chosen variable reflects a deliberate intersection of these models, aiming to dissect the intricate dynamics of ICT utilization within educational domains both inside and beyond the classroom setting.
 
-Variables were initially screened for their relevance to the core constructs of the study's guiding frameworks. The PISA ICT Framework provides a dichotomy of in-school factors (such as ICT curriculum integration, availability of technology, and teacher ICT proficiency) and outside-the-classroom influences (encompassing access to technology at home and students' ICT engagement outside school hours). Similarly, the Multi-Level Framework of Technology Acceptance and Use (MLFTAU) offered a layered perspective on ICT adoption, spanning individual, organizational, and environmental influences.
+The selection of variables for this study was guided by a systematic, theory-driven process to ensure alignment with the study's objectives of understanding ICT integration in education and its broader implications for educational outcomes. Anchored in the PISA Questionnaire Framework, PISA ICT Framework, and the Multi-Level Framework of Technology Acceptance and Use (MLFTAU), this process ensured the inclusion of variables relevant to both the structural and behavioral aspects of ICT adoption and use.
 
-An extensive review of current literature was performed to identify variables consistently linked with meaningful ICT integration outcomes. These variables were cross-referenced with the factors outlined in the theoretical frameworks to ensure their pertinence to the study's focus on technology acceptance and educational effectiveness.
+The variable selection process encountered several challenges, particularly in handling dual-labeling complexities and ensuring theoretical alignment with both frameworks. Many variables spanned multiple constructs, requiring careful consideration to assign them accurately without oversimplification or redundancy. Balancing the comprehensive scope of the PISA ICT Framework with the nuanced behavioral constructs of MLFTAU demanded a rigorous review of documentation and theoretical consistency. Additionally, ensuring that variables were not only aligned with the frameworks but also empirically suitable for analysis, given constraints like missing data, posed another layer of complexity. These challenges were addressed through systematic mapping and iterative refinement, ensuring that the selected variables retained both theoretical and practical relevance.
 
-A meticulous examination of the PISA 2022 dataset was undertaken to determine the availability of potential variables. This step was crucial in refining the variable pool to include only those with robust data support and exclude variables with extensive missing data or inadequate measurement reliability.
+The PISA Questionnaire Framework provided a comprehensive foundation, encompassing diverse constructs such as socioeconomic status, school climate, and ICT engagement. The PISA ICT Framework further refined this focus, categorizing variables into In-School ICT Factors (e.g., teacher proficiency, infrastructure, and curriculum integration) and Outside-the-Classroom ICT Factors (e.g., home access to technology, parental involvement, and ICT engagement). These dimensions are mapped to the CIPO (Context, Input, Process, and Output) model, offering a robust structure for understanding ICT’s role within educational systems.
 
-The final assortment of variables was curated to ensure tangible linkages to policy implications and educational practice. This was underpinned by the consideration of variables that can inform evidence-based interventions and strategic educational planning.
+Complementing this, the MLFTAU framework introduced a behavioral and contextual lens, enabling the study to examine ICT adoption across six adapted domains—Individual, Group/Class, Organisation/School, Organisation/Family, Organisation/Society, and Output. Each domain is further deconstructed into constructs such as Facilitating Conditions, Social Influence, Performance Expectancy, Effort Expectancy, and Price Value, providing a granular perspective on the factors influencing ICT adoption and integration. Notably, the MLFTAU framework does not include explicit outcome constructs. To address this gap, PISA outputs (e.g., Cognitive Learning Outcomes, ICT Competencies, Well-Being Outcomes) were mapped onto corresponding MLFTAU domains and constructs to analyze the impacts of ICT access and use within educational contexts.
 
-The selected variables encompass a comprehensive array of factors relating to the PISA ICT framework and the MLFTAU:
+By integrating PISA outputs into MLFTAU’s framework, this study bridges the gap between structural enablers (e.g., infrastructure, parental support) and measurable educational outcomes (e.g., ICT competencies). For example, variables capturing teachers' ICT skills, parental involvement, and institutional resources are aligned with constructs such as Facilitating Conditions and Social Influence. This dual mapping ensures that the selected variables comprehensively address both systemic factors and individual behaviors, providing a holistic understanding of ICT integration.
 
-```{r, in_school_constructs, echo=FALSE}
-library(knitr)
-library(kableExtra)
+This integration of frameworks ensures that the variable selection process is rigorous, aligned with the study’s objectives, and capable of generating actionable insights into the interplay between ICT access, usage, and outcomes.
 
-# Read the CSV file
-data <- read.csv("data/metadata/PISA_&_MLFTAU_construct_data/PISA_in_school_constructs.csv")
+To maintain both theoretical rigor and practical applicability, the variable selection process followed a structured approach:
 
-# Create and style the table
-kable(data, align = "l", caption = "Key Constructs of the PISA ICT Framework - In-School Dimension") %>%
-  kable_styling(position = "left", full_width = FALSE, latex_options = "scale_down") %>%
-  column_spec(1, width = "2cm") %>%
-  column_spec(2, width = "3cm") %>%
-  column_spec(3, width = "5cm") %>%
-  column_spec(4, width = "5cm")
-```
+> **1. Initial Screening** identified variables directly relevant to the study’s core focus on ICT integration and educational environments.
 
-```{r, out_of_school_constructs, echo=FALSE}
-library(knitr)
-library(kableExtra)
+> **2. Theoretical Alignment** ensures that selected variables align with constructs from the PISA ICT Framework and MLFTAU, addressing critical aspects of ICT access, use, and outcomes.
 
-# Read the CSV file
-data <- read.csv("data/metadata/PISA_&_MLFTAU_construct_data/PISA_out_of_school_constructs.csv")
+> **3. Empirical Suitability** evaluates variables for data quality, excluding those with high levels of missing data or inadequate measurement properties.
 
-# Create and style the table
-kable(data, align = "l", caption = "Key Constructs of the PISA ICT Framework - Outside-the-Classroom Dimension") %>%
-  kable_styling(position = "center", full_width = FALSE, latex_options = "scale_down") %>%
-  column_spec(1, width = "2cm") %>%
-  column_spec(2, width = "3cm") %>%
-  column_spec(3, width = "5cm") %>%
-  column_spec(4, width = "5cm")
-```
+> **4. Policy and Practice Relevance** prioritizes variables that not only support theoretical analysis but also offer actionable insights for educational policy and practice.
 
-```{r, MLFTAU_constructs, echo=FALSE}
-library(knitr)
-library(kableExtra)
+This structured variable selection protocol ensures that the data analyzed in this study is both methodologically sound and aligned with the broader research goals of exploring the interplay between ICT access, usage, and educational outcomes. The subsequent tables illustrate how variables were mapped to the CIPO dimensions and frameworks, demonstrating their relevance to the study’s objectives and their alignment with theoretical constructs.
 
-# Read the CSV file
-data <- read.csv("data/metadata/PISA_&_MLFTAU_construct_data/MLFTAU_constructs.csv")
+### Framework Mapping: PISA ICT and MLFTAU Constructs
 
-# Create and style the table
-kable(data, align = "l", caption = "Key Constructs of the Multi-Level Framework of Technology Acceptance and Use (MLFTAU)") %>%
-  kable_styling(position = "center", full_width = FALSE, latex_options = "scale_down") %>%
-  column_spec(1, width = "2cm") %>%
-  column_spec(2, width = "3cm") %>%
-  column_spec(3, width = "5cm") %>%
-  column_spec(4, width = "5cm")
-```
+The mapping of variables to the PISA ICT and MLFTAU frameworks ensured theoretical alignment and analytical clarity. Both frameworks played complementary roles in analyzing ICT access, use, and outcomes. The PISA ICT Framework focuses on contextual and procedural dimensions within educational systems, while the MLFTAU framework provides a behavioral lens for understanding ICT adoption and its broader impacts.
 
-The following table provides an example of how In-School Input variables are mapped to the research objectives. By focusing on key resources and conditions within schools—such as ICT availability, teacher training, and internet connectivity—this mapping demonstrates how each variable supports an in-depth understanding of ICT integration at the school level. This structured selection ensures that each variable is both theoretically grounded in the PISA ICT framework and practically relevant to evaluating in-school ICT infrastructure's role in educational outcomes.
+#### PISA ICT Framework Mapping
+
+The PISA ICT Framework categorizes ICT-related variables into two primary contexts: In-School ICT Contexts (e.g., infrastructure, teacher proficiency, and curriculum integration) and Outside-the-Classroom ICT Contexts (e.g., home access to technology, parental involvement). These contexts align with the CIPO (Context, Input, Process, and Output) model, enabling a comprehensive analysis of ICT integration in education.
+
+**Example: Student Smartphone Ownership**
+
+- Variable: ST250Q04JA – home_smartphone
+
+> - PISA ICT Framework: Outside-the-Classroom
+
+> - PISA ICT CIPO Domain: Input
+
+- PISA ICT Construct: Access to ICT Resources for Learning
+
+- Rationale: This variable reflects the availability of essential digital tools at home, enabling students to engage in independent learning and ICT-based activities.
+
+To capture multidimensional roles, dual labeling was applied where variables spanned multiple constructs. For example, Parental Support for ICT Use During COVID-19 (ST353Q04JA) was mapped to both "Access to ICT Resources for Learning" and "Parents' and Teachers' Supervision of ICT Use." This dual mapping reflects the interplay between infrastructural support (e.g., providing devices) and behavioral supervision (e.g., guiding ICT use).
+
+#### MLFTAU Framework Mapping
+
+The MLFTAU framework was adapted to include six domains relevant to the educational context: Individual, Group/Class, Organisation/School, Organisation/Family, Organisation/Society, and Output. Each domain comprises constructs like Facilitating Conditions, Social Influence, and Performance Expectancy, providing a granular perspective on ICT adoption and integration.
+
+**Example: Teacher Digital Skills**
+
+- Variable: IC172Q08JA – teacher_digital_skills
+
+> - MLFTAU Domain: Organisation/School
+
+> - MLFTAU Construct: Social Influence
+
+- Rationale: Teachers’ digital skills are shaped by expectations from peers and school leadership, influencing collective practices and digital integration.
+
+As with the PISA ICT Framework, dual labeling captured the multidimensional roles of variables. For instance, Coding/Programming Practice at School (ST276Q08JA) was mapped to both "Facilitating Conditions" (availability of resources and teacher support) and "Habit" (reinforcement through regular practice).
+
+#### Mapping PISA Outputs to MLFTAU Constructs
+
+While the MLFTAU framework lacks explicit outcome constructs, PISA outputs (e.g., ICT Competencies) were mapped to MLFTAU domains to bridge this gap.
+
+**Example: COVID-19's Impact on Students' ICT Skills**
+
+- Variable: ST354Q07JA – covid_skills_improved_devices
+
+> - Domains: Individual (MLFTAU), Output (PISA)
+
+> - Constructs: Facilitating Conditions (MLFTAU), ICT Competencies (PISA)
+
+- Rationale: The availability of devices and connectivity during the pandemic (Facilitating Conditions) supported students’ engagement with ICT tools, resulting in improved ICT competencies (PISA outcomes).
+
+#### Mapping Variables to Framework Constructs
+
+The process of mapping variables to the PISA ICT and MLFTAU frameworks ensures theoretical alignment and practical relevance. To illustrate this alignment, the following table provides an example of how In-School Input variables are mapped to the research objectives. By focusing on key resources and conditions within schools—such as ICT availability, teacher training, and internet connectivity—this mapping demonstrates the connection between theoretical constructs and the study’s objectives of understanding ICT integration in education.
 
 ```{r, example_mapping_of_in-school_input_variables, echo=FALSE}
 library(knitr)
@@ -468,83 +958,897 @@ data <- read.csv("data/metadata/PISA_&_MLFTAU_construct_data/mapping_in-school_I
 
 # Create and style the table
 kable(data, align = "l", 
-      col.names = c("Framework Construct", "Variable", "Description", "Data Source", "Relevance to Research Objectives"),
+      col.names = c("Framework Domain", "Construct", "Description", "Relevance to Research Objectives"),
       caption = "In-School ICT Input Variables: Alignment with Research Objectives on ICT Integration in Education") %>%
   kable_styling(position = "center", full_width = FALSE, latex_options = "scale_down") %>%
   column_spec(1, width = "2cm") %>%
   column_spec(2, width = "2cm") %>%
-  column_spec(3, width = "3cm") %>%
-  column_spec(4, width = "1.5cm") %>%
-  column_spec(5, width = "6cm")
+  column_spec(3, width = "5cm") %>%
+  column_spec(4, width = "5.5cm")
 ```
 
-This systematic and rigorous variable selection protocol ensures that my analysis is anchored in empirical evidence, is methodologically sound, and aligns seamlessly with my research aims.
+This structured selection ensures that each variable is both theoretically grounded in the PISA ICT framework and practically relevant to evaluating in-school ICT infrastructure's role in educational outcomes.
 
-## Analytical Methods
-In the example analysis below, the plausible values and weight for the specified year are accessed from the lists, and the average mathematics performance is calculated by gender, demonstrating the practical use of the data and lists.
+### Filtering for Completeness and Relevance
 
+The first stage of the variable exclusion process involves filtering for relevant data to ensure the dataset contains only students with sufficient responses to individual-level variables. This step is critical for maintaining the integrity of subsequent analyses, as it ensures that students with excessive missing or invalid responses do not bias the results.
 
+This stage targets variables from the PISA student questionnaire (variables starting with ST) and the ICT questionnaire (variables starting with IC) completed by students. These variables represent self-reported responses directly tied to individual-level behaviors, access, and perceptions related to ICT use. By isolating these variables, this step focuses on assessing the completeness of individual student data.
 
-# Load necessary library
-library(intsvy)
+The following variables are excluded from the analysis of missing data at this stage, as they do not reflect direct student responses:
 
-# Function to load cleaned PISA data for a specified year
-load_cleaned_pisa_data <- function(year) {
-    # Define file path dynamically for the processed folder with the correct naming format
-    csv_path <- paste0("data/processed/", year, "/pisa", year, "_cleaned.csv")
-    # Read the CSV
-    pisa_data <- read_csv(csv_path)
-    return(pisa_data)
-}
+**1. PISA-Derived Variables**
 
-# Specify the year of analysis
-year <- "2022"
+- Aggregates, averages, and indices calculated by PISA (e.g., socioeconomic status indices, plausible values) are excluded because they are derived rather than self-reported. These variables are essential for broader analysis but are not relevant for assessing missingness in student responses.
 
-# Load the cleaned PISA data for the specified year
-pisa_data <- load_cleaned_pisa_data(year)
+**2. School-Level Variables (SC)**
 
-# Access PVs and weight variable for the specified year
-pvs <- pv_list[[year]]
-weight_var <- weights[[year]]
+- Responses from the school questionnaire (e.g., ICT resources at school, teacher training availability), which are identical for all students within a school, are excluded from this stage. While these variables are crucial for later analysis, they do not contribute to the evaluation of missingness at the student level.
 
-# Ensure 'gender' is properly set as a factor in the data
-if ("gender" %in% colnames(pisa_data)) {
-    pisa_data$gender <- factor(pisa_data$gender, levels = c("Female", "Male"))
-} else {
-    stop("The 'gender' variable is missing in the data.")
-}
+**3. Weighting and Sampling Variables**
 
-# Example analysis: Calculate average mathematics performance by gender
-math_results <- pisa.mean.pv(
-    pvlabel = pvs,
-    by = "gender",
-    weight = weight_var,
-    data = pisa_data
+- PISA weighting variables (e.g., student weights, school weights) are excluded because they serve a different analytical purpose and are not relevant for determining individual student data completeness.
+
+The purpose of this stage is to identify and exclude students with ≥20% missing or invalid responses in the student-reported variables (ST and IC). This threshold ensures that the dataset contains students with sufficient responses to provide meaningful insights into ICT use and its impacts.
+
+It is important to note that PISA-derived variables, school-level data, and other non-student variables excluded from this stage are not removed permanently. These variables remain part of the broader dataset and will be incorporated into subsequent analyses to explore relationships between individual behaviors, school-level factors, and derived constructs.
+
+The filtering process follows a systematic approach:
+
+**1. Identify Relevant Variables**
+
+- Select all variables starting with ST and IC (student and ICT questionnaires) while excluding a predefined list of PISA-derived variables and aggregates.
+
+**2. Calculate Missingness**
+
+- Evaluate the percentage of missing (coded as NA), invalid (98), or no-response (99) values for each student in the selected variables.
+
+**3. Apply Exclusion Threshold**
+
+- Exclude students with ≥20% missing or invalid responses in the relevant student-reported variables.
+
+**4. Retain Relevant Data**
+
+- The remaining dataset includes only students with sufficient responses, ensuring a robust foundation for subsequent analyses.
+
+By excluding students with excessive missing data, this step ensures the integrity and validity of the analysis. The focus on student-reported variables (ST and IC) aligns with the study's objectives, while retaining PISA-derived variables and school-level data for later analysis ensures a holistic exploration of ICT use and its broader educational implications.
+
+The following code was used to implement this filtering process and create the first iteration of the cleaned dataset:
+
+```{r variable_selection, eval=FALSE}
+# Load necessary libraries
+library(dplyr)
+library(readr)
+
+# File paths
+mapping_table_path <- "data/private/metadata/2022/pisa2022_variable_mapping_table.csv"
+student_data_path <- "data/private/processed/2022/pisa2022_cleaned_2_transformation_and_standardization.csv"
+na_summary_output_path <- "data/private/metadata/2022/pisa2022_students_with_detailed_na_summary.csv"
+cleaned_data_output_path <- "data/private/processed/2022/pisa2022_cleaned_3_variable_selection.csv"
+
+# Load data
+mapping_table <- read_csv(mapping_table_path)
+student_data <- read_csv(student_data_path)
+
+# Excluded variables
+excluded_variables <- c(
+  "STRATUM", "STUDYHMW", "STRESAGR", "ICTRES", "ICTSCH", "ICTAVSCH", "ICTHOME", 
+  "ICTAVHOM", "ICTQUAL", "ICTSUBJ", "ICTENQ", "ICTFEED", "ICTOUT", "ICTWKDY", 
+  "ICTWKEND", "ICTREG", "ICTINFO", "ICTDISTR", "ICTEFFIC", "STUBMI", "STRATIO", 
+  "STAFFSHORT", "STUBEHA", "STDTEST"
 )
 
-# Display results
-print(math_results)
+# Step 1: Filter relevant variables
+relevant_variables <- mapping_table %>%
+  filter(
+    grepl("^ST|^IC", original_variable_name) & 
+      !original_variable_name %in% excluded_variables
+  ) %>%
+  pull(renamed_variable)
+
+# Ensure variables exist in the dataset
+relevant_variables <- intersect(relevant_variables, colnames(student_data))
+
+# Step 2: Filter data for relevant variables
+student_data_filtered <- student_data %>%
+  select(student_id, all_of(relevant_variables))
+
+# Step 3: Calculate missing data counts and percentages
+student_data_summary <- student_data_filtered %>%
+  rowwise() %>%
+  mutate(
+    # Count NA, 98, and 99 values
+    total_na = sum(is.na(c_across(-student_id))),
+    total_invalid = sum(c_across(-student_id) == 98, na.rm = TRUE),
+    total_no_response = sum(c_across(-student_id) == 99, na.rm = TRUE),
+    
+    # Combined missing values (NA + 98 + 99)
+    combined_missing = total_na + total_invalid + total_no_response,
+    
+    # Total number of relevant variables
+    total_variables = length(c_across(-student_id)),
+    
+    # Calculate percentage of combined missing data
+    combined_missing_percent = round((combined_missing / total_variables) * 100, 1)
+  ) %>%
+  ungroup() %>%
+  select(
+    student_id, total_na, total_invalid, total_no_response, 
+    combined_missing, combined_missing_percent, everything()
+  )  # Keep all variables for detailed analysis
+
+# Step 4: Save detailed NA summary
+write_csv(student_data_summary, na_summary_output_path)
+cat("Detailed NA summary saved to:", na_summary_output_path, "\n")
+
+# Step 5: Identify students with >20% missing responses
+students_to_exclude <- student_data_summary %>%
+  filter(combined_missing_percent > 20) %>%
+  pull(student_id)
+
+# Step 6: Exclude flagged students from the full dataset
+cleaned_data <- student_data %>%
+  filter(!student_id %in% students_to_exclude)
+
+# Save the cleaned dataset
+write_csv(cleaned_data, cleaned_data_output_path)
+cat("Cleaned dataset saved to:", cleaned_data_output_path, "\n")
+
+# Print summary of the filtering process
+num_students_excluded <- length(students_to_exclude)
+cat("Number of students excluded:", num_students_excluded, "\n")
+cat("Number of students retained:", nrow(cleaned_data), "\n")
 ```
 
-The example below calculates the average mathematics performance by gender, using PVs and the appropriate student weight to ensure accuracy and representativeness.
-
-
-
-
-# Load necessary library
-library(intsvy)
-
-# Define plausible values and weight variable
-pvs_math <- c("PV1MATH", "PV2MATH", "PV3MATH", "PV4MATH", "PV5MATH")
-weight_var <- "W_FSTUWT"
-
-# Example analysis using plausible values and weights
-# Average mathematics performance by gender
-math_results <- pisa.mean.pv(pisa_data, pvlabel = pvs_math, by = "gender")
-
-# Display results
-print(math_results)
+```{r variable_selection_script, eval=FALSE}
+# Source the script for variable selection and exclusion
+# This script automates the exclusion of students with high missingness, while ensuring the resulting dataset remains proprietary and is used exclusively for academic research.
+source("scripts/2022/pisa2022_cleaned_3_variable_selection.R")
 ```
+
+399 students with more than 20% combined missing responses were flagged for further review and then deleted from pisa2022_cleaned_2_transformation_and_standardization.csv to create pisa2022_cleaned_3_handling_missing_data.csv. This exclusion ensures that cases with significant missing data do not compromise the integrity of the analysis. 
+
+The cleaned dataset contains **8051 students (8450 original students minus 399 excluded)**
+
+With a complete dataset of students who meet the basic missingness threshold, the next step involves reviewing variables to ensure their completeness and relevance for analysis.
+
+### Excluding Variables with High Missingness
+
+Missing data can undermine the reliability and validity of statistical analyses, particularly when missingness is non-random or concentrated within critical subgroups. Following established guidelines in educational research (Dong & Peng, 2013), this stage evaluates the percentage of missing data for each variable in the dataset. Variables with 20% or higher levels of missingness were extracted for review and classified based on their missingness percentages, relevance to the research objectives, and patterns of missingness.
+
+This process ensures the dataset remains robust and aligned with the study’s focus on ICT access, usage, and outcomes in education. The steps taken to evaluate and address high-missingness variables are outlined below:
+
+**Calculate Missingness Percentage:**
+
+For all variables, the percentage of missing data was calculated, including:
+
+- Unrecorded responses (NA)
+
+- Coded invalid responses (98)
+
+- Coded non-responses (99)
+
+**Classify Variables:**
+
+- Variables with 100% missingness were automatically excluded as they lack any recorded data for analysis.
+
+- Variables with 20% or more missingness were reviewed individually to assess their relevance to the research and to identify patterns of missingness (e.g., valid skips due to context-specific factors like school closures during COVID-19).
+
+**Decision-Making:**
+
+Variables were retained or excluded based on the following criteria:
+
+- Relevance to the study’s objectives on ICT integration and outcomes.
+
+- Feasibility of addressing missingness through subgroup analysis or imputation.
+
+- Alignment with the analytical frameworks (PISA ICT Framework and MLFTAU).
+
+**Subgroup-Specific Patterns:**
+
+Variables retained despite high missingness were further analyzed for subgroup-specific trends to evaluate whether missingness was random or systematic. For example, missingness concentrated in students whose schools remained open during COVID-19 closures was deemed valid and justifiable.
+
+**Generating the Missingness Summary**
+
+The missingness summary was generated to identify variables with high levels of missingness and to guide decisions on retention or exclusion. The percentage of missing data was calculated for each variable, including unrecorded responses (NA), invalid responses (98), and non-responses (99).
+
+The following code was used to generate the summary:
+
+```{r missingness_summary, eval=FALSE}
+# Load necessary libraries
+library(dplyr)
+library(readr)
+library(tidyr)
+
+# File paths
+student_data_path <- "data/private/processed/2022/pisa2022_cleaned_3_variable_selection.csv"
+missingness_summary_path <- "data/private/metadata/2022/pisa2022_missingness_summary.csv"
+
+# Load the filtered student data
+student_data <- read_csv(student_data_path)
+
+# Calculate Missingness Percentages (NA, 98, and 99 as missing)
+variable_missingness <- student_data %>%
+  summarise(across(
+    everything(),
+    ~ round(sum(is.na(.) | . == 98 | . == 99, na.rm = TRUE) / n() * 100, 2)
+  )) %>%
+  pivot_longer(cols = everything(), names_to = "variable", values_to = "missingness_percent") %>%
+  arrange(desc(missingness_percent))
+
+# Save the missingness summary
+write_csv(variable_missingness, missingness_summary_path)
+```
+
+```{r high_missingness_script, eval=FALSE}
+# Source the script for high-missingness exclusion
+# This script automates the evaluation of high missingness in the dataset, while ensuring the resulting dataset remains proprietary and is used exclusively for academic research.
+source("scripts/2022/pisa2022_high_missingness_summary.R")
+```
+
+The variables reviewed in this process are summarized in two tables below.
+
+**Excluded Variables (100% Missingness)**
+
+The following variables were excluded due to 100% missingness in the Thailand dataset. These variables belong to optional modules or items of the PISA questionnaire, which were not administered in Thailand during the 2022 assessment cycle. High global missingness percentages (>80%) for these variables further confirm their limited inclusion across participating countries.
+
+```{r auto_excluded_variables, echo=FALSE}
+library(knitr)
+library(kableExtra)
+library(readr)
+
+# File path for 100% missingness table
+auto_excluded_path <- "data/private/metadata/2022/pisa2022_auto_excluded_variables.csv"
+
+# Read the CSV file
+data_auto_excluded <- read_csv(auto_excluded_path)
+
+# Create and style the table
+kable(data_auto_excluded, align = "l", 
+      col.names = c("Variable", "Missing (%)", "Decision", "Reason for Exclusion"),
+      caption = "Variables Automatically Excluded Due to 100\\% Missingness") %>%
+  kable_styling(position = "center", full_width = FALSE, latex_options = "scale_down") %>%
+  column_spec(1, width = "5.5cm") %>%
+  column_spec(2, width = "2cm") %>%
+  column_spec(3, width = "2cm") %>%
+  column_spec(4, width = "5.5cm")
+```
+
+**Reviewed Variables (20% or More Missingness)**
+
+Variables with 20% or more missingness were reviewed for their relevance and patterns of missingness. Retained variables, such as learning_resources, were deemed essential for exploring ICT trends in education and will undergo subgroup analysis or imputation to address missing data. Variables with irrelevance or unresolvable issues were excluded.
+
+```{r retained_or_excluded_variables, echo=FALSE}
+# File path for reviewed variables table
+reviewed_vars_path <- "data/private/metadata/2022/pisa2022_retained_or_excluded_variables.csv"
+
+# Read the CSV file
+data_reviewed_missing <- read_csv(reviewed_vars_path)
+
+# Create and style the table
+kable(data_reviewed_missing, align = "l", 
+      col.names = c("Variable", "Missing (%)", "Decision", "Justification"),
+      caption = "Reviewed Variables with 20\\% or More Missingness and Their Decisions") %>%
+  kable_styling(position = "center", full_width = FALSE, latex_options = "scale_down") %>%
+  column_spec(1, width = "5.5cm") %>%
+  column_spec(2, width = "2cm") %>%
+  column_spec(3, width = "1.5cm") %>%
+  column_spec(4, width = "6cm")
+```
+
+The variable review process addressed 22 variables with 20% or more missingness. Among them:
+
+- 15 variables were excluded due to 100% missingness.
+
+- 7 variables were reviewed for relevance and alignment with research objectives.
+
+> - Variables deemed relevant (e.g., learning_resources) were retained and will undergo further analyses to address missingness.
+
+> - Variables with limited relevance (e.g., future_study_work_country_specific) were excluded to ensure the dataset remains robust and focused.
+
+This rigorous approach balances methodological integrity with the study’s objectives. Retained variables with high missingness will undergo subgroup-specific analysis or imputation to ensure their inclusion enhances, rather than biases, the study’s findings.
+
+A total of 18 variables were removed and the cleaned dataset to was saved to: 
+
+data/private/processed/2022/pisa2022_cleaned_4_high_missingness_exclusion.csv 
+
+```{r exluded_variable_removal_script, eval=FALSE}
+# Source the script for automating the exclusion of variables
+# This script automates the removal of variables with high missingness or irrelevance, while ensuring the resulting dataset remains proprietary and is used exclusively for academic research.
+source("scripts/2022/pisa2022_cleaned_4_high_missingness_exclusion.R")
+```
+
+### Assessing Missingness Mechanisms
+
+After excluding variables with 100% missing data, it is necessary to analyze the patterns of missingness in the remaining dataset. While complete missingness warranted exclusion, many variables still exhibit partial missingness, which may be due to valid skips, survey design choices, or non-responses. Understanding these patterns is crucial for determining appropriate handling strategies, including whether missing data can be assumed to be Missing Completely at Random (MCAR), Missing at Random (MAR), or Missing Not at Random (MNAR).
+
+#### Heatmap of Missingness
+
+A heatmap was generated to visualize the missingness in the cleaned dataset (pisa2022_cleaned_4_high_missingness_exclusion.csv) following the exclusion of variables with 100% missing data or deemed irrelevant. The visualization includes retained variables with varying levels of partial missingness, valid skips, and not applicable responses (e.g., coded responses of 95 or 97).
+
+The heatmap now emphasizes partial missingness, allowing further exploration of missing data mechanisms (e.g., MCAR, MAR, or MNAR) and subgroup-specific patterns.
+
+```{r missing_data_heatmap, echo=FALSE, message=FALSE, warning=FALSE}
+# Load necessary libraries
+library(naniar)   # For visualizing missing data
+library(ggplot2)  # For creating the heatmap
+
+# Load the dataset
+student_data_path <- "data/private/processed/2022/pisa2022_cleaned_4_high_missingness_exclusion.csv"
+student_data <- read.csv(student_data_path)
+
+# Generate the heatmap
+gg_miss_var(student_data, show_pct = TRUE) +
+  theme_minimal() +
+  labs(
+    title = "Heatmap of Missing Data",
+    x = "Variables",
+    y = "Number of Missing Observations"
+  ) +
+  theme(
+    axis.text.x = element_text(angle = 90, hjust = 1),
+    plot.title = element_text(hjust = 0.5, face = "bold")
+  )
+```
+
+**Observations from the Heatmap:**
+
+**1. No Variables with 100% Missing Data**
+
+The heatmap confirms that all variables with 100% missingness have been successfully excluded, as there are no columns entirely darkened.
+
+**2. Patterns of Missingness**
+
+Missing data appears concentrated in specific variables, with varying intensities across the dataset. These patterns may indicate valid skips or systematic differences that warrant further investigation.
+
+**3. Subgroups of Interest**
+
+Variables related to contextual factors, such as responses during COVID-19 school closures, still exhibit moderate levels of missingness. These missingness patterns likely correspond to valid skips (e.g., students whose schools remained open) and will be evaluated further in the context of subgroup-specific analysis.
+
+**4. Strategic Handling of Missingness**
+
+Missing data mechanisms will be explored further to determine whether subgroup-level patterns exist and whether missing values can be assumed to be MCAR, MAR, or MNAR.
+
+Depending on these findings, potential solutions may include subgroup analysis, multiple imputation, or alternative statistical adjustments.
+
+These insights guide the next step of categorizing missing data mechanisms, allowing for targeted handling strategies.
+
+#### Manual Addition of Skip Logic and Implications of Skip
+
+Additional columns were created to further document and understand missingness. The skip_logic and implication_of_skip columns were manually added to the response summary and populated based on relevant documentation, including the PISA technical report and questionnaire framework. This step ensures that decisions about inclusion/exclusion are grounded in a complete understanding of missingness patterns and their implications for analysis.
+
+**1. Skip Logic**
+
+The skip_logic column records the administration pattern of each variable. This includes whether a question was:
+
+- Presented to All – Administered to all students regardless of prior responses.
+
+- Randomized Subset – Given to a subset of students selected through survey design.
+
+- Skip Based on Prior Response – Administered conditionally based on earlier responses.
+
+These assignments were based on PISA routing rules, response rates, and the survey design framework.
+
+**2. Implication of Skip**
+
+The implication_of_skip column provides an interpretation of how skip patterns affect data usability. Skipped responses may introduce systematic missingness, meaning certain student groups may have higher or lower response rates for specific questions. This column documents:
+
+- Whether missingness is likely systematic (e.g., skipped due to a student’s earlier response).
+
+- Whether the variable is only applicable to specific groups, which may limit generalizability.
+
+Understanding how and why data are missing is essential for ensuring methodologically sound handling of missingness. By explicitly documenting skip logic and its implications, this step:
+
+- Improves transparency in missing data assessment.
+
+- Helps refine inclusion/exclusion decisions by identifying variables with limited applicability.
+
+- Aligns the dataset with theoretical frameworks, ensuring analytical validity.
+
+By systematically categorizing skip patterns and their impact, this section lays the foundation for evaluating missing data mechanisms and assessing potential redundancies or exclusions in the dataset.
+
+#### Creation of Status Columns in the Variable Mapping Table
+
+With initial assessment of missingness complete, status, status_priority, and status_reason columns were created in the variable mapping table. These columns document the provisional inclusion status, theoretical priority, and rationale for each variable's inclusion or exclusion.
+
+**1. Assignment of Inclusion Status**
+
+Each variable was assigned an inclusion status (Included or Excluded) based on its alignment with research objectives, the PISA ICT Framework, and the Multi-Level Framework of Technology Acceptance and Use (MLFTAU). Additional practical considerations, such as missingness patterns and survey design constraints, also informed these decisions.
+
+**2. Determination of Priority Level**
+
+To further differentiate variables by their theoretical and methodological importance, a priority level was assigned in the status_priority column:
+
+- High: Variables that are central to the research questions, directly aligned with theoretical models, and essential for key analyses.
+
+- Medium: Variables that contribute contextual insights or secondary analyses but are not strictly necessary for core research objectives.
+
+- Low: Variables that have limited theoretical significance or high levels of missingness, but may still provide exploratory value.
+
+This priority ranking ensures that essential variables remain a focus of the study while allowing flexibility for secondary and exploratory analyses.
+
+**3. Documentation of Rationale**
+
+The rationale for each inclusion decision was documented in the status_reason column, providing clarity and transparency for all decisions. This step ensures that each decision can be revisited and understood in the context of the research.
+
+**3. Integration with the Questionnaire Response Summary**
+
+The status, priority level, and rationale columns from the updated mapping table were then merged with the response summary file to update the inclusion_status, inclusion_priority, and reason_for_decision columns. This integration ensures consistency between the mapping table and the response summary used in subsequent analysis.
+
+```{r update_response_summary, eval=FALSE}
+# Load necessary libraries
+library(dplyr)
+library(readr)
+
+# File paths
+response_summary_path <- "data/private/metadata/2022/pisa2022_questionnaire_response_summary_for_missingness_analysis.csv"
+variable_mapping_path <- "data/private/metadata/2022/pisa2022_variable_mapping_table.csv"
+
+# Read files
+response_summary <- read_csv(response_summary_path)
+variable_mapping <- read_csv(variable_mapping_path)
+
+# Replace NAs with blank strings, except for specific columns
+response_summary <- response_summary %>%
+  mutate(across(
+    -c(value, Label),  # Exclude value and Label columns
+    ~ ifelse(is.na(.), "", .)
+  ))
+
+# Merge mapping table into response summary
+response_summary_updated <- response_summary %>%
+  left_join(
+    variable_mapping %>%
+      select(original_variable_name, status, status_priority, status_reason),
+    by = c("original_variable_name" = "original_variable_name")
+  ) %>%
+  mutate(
+    inclusion_status = ifelse(is.na(status), inclusion_status, status),
+    inclusion_priority = ifelse(is.na(status_priority), inclusion_priority, status_priority),
+    reason_for_decision = ifelse(is.na(status_reason), reason_for_decision, status_reason)
+  ) %>%
+  select(-status, -status_priority, -status_reason)
+
+# Save updated response summary
+write_csv(response_summary_updated, response_summary_path)
+
+cat("Response summary successfully updated.")
+```
+
+```{r update_response_summary script, eval=FALSE}
+# Source the script for updating the response summary with status columns
+# This script automates the transformation and standardization of variables, while ensuring the resulting dataset remains proprietary and is used exclusively for academic research.
+source("scripts/2022/update_response_summary.R")
+```
+
+### Identification and Removal of Constant Variables
+
+To identify constant variables in the dataset, all variables with identical values across all records were flagged. This process is crucial because constant variables—those that do not provide variation or meaningful information for analysis—can be removed to streamline the dataset.
+
+**Step 1: Creation of the Table of Constant Variables**
+
+A table was created to isolate the variables with constant values. This included variables such as country codes, sampling strata, and some Weighted Likelihood Estimate (WLE) variables, which typically do not exhibit variation across cases. These variables were reviewed to determine if they were genuinely constant or if they provided critical metadata that should be retained for future analyses.
+
+The table below lists the identified constant variables, along with their descriptions and constant values.
+
+```{r constant variables, echo=FALSE}
+# File path for constant variables table
+constant_vars_path <- "data/private/metadata/2022/constant_variables.csv"
+
+# Read the CSV file
+data_constant_vars <- read_csv(constant_vars_path)
+
+# Create and style the table
+kable(data_constant_vars, align = "l", 
+      col.names = c("Original Variable Name", "Renamed Variable", "Variable Description", "Constant Value"), 
+      caption = "Constant Variables Identified for Removal from the Dataset") %>%
+  kable_styling(position = "center", full_width = FALSE, latex_options = "scale_down") %>%
+  column_spec(1, width = "2.5cm") %>%
+  column_spec(2, width = "4.5cm") %>%
+  column_spec(3, width = "6cm") %>%
+  column_spec(4, width = "1.5cm")
+```
+
+**Step 2: Review and Decision Making**
+
+After reviewing the table of constant variables, the following decisions were made regarding retention and removal to ensure that only methodologically relevant variables remain in the dataset.
+
+**Retained Variables**
+
+Certain variables were retained as they provide essential metadata or support potential future analyses:
+
+- CNTRYID (country_id) – Retained to enable future cross-country comparisons if needed.
+
+- CYC (assessment_cycle) – Retained to identify the PISA cycle and ensure correct versioning.
+
+- STRATUM (sampling_stratum) – Retained for sampling stratification and correct weighting.
+
+- SUBNATIO (subnational_region) – Retained to support subnational analysis, which is part of the research scope.
+
+- ADMINMODE (administration_mode) – Retained as it provides insights into test administration methodology.
+
+**Removed Variables**
+
+The following variables were excluded, as they contained a single constant value across all observations, providing no useful differentiation:
+
+- CNT (country_code) – All students are from Thailand (THA), making this redundant.
+
+- NatCen (national_center_code) – Irrelevant for analysis; only relevant for coordination purposes.
+
+- OECD (oecd_member) – No variation (0 for all students, as Thailand is not an OECD country).
+
+- Option_ICTQ (ict_questionnaire_flag) – All students completed the ICT questionnaire, making this unnecessary.
+
+- Several Weighted Likelihood Estimate (WLE) variables (e.g., PERSEVAGR, COOPAGR, EMPATAGR) – Excluded because their values were constant across all observations (97), indicating they were not administered or not applicable in the dataset.
+
+- ST006Q05JA (mother_qualification_4) and ST008Q05JA (father_qualification_4) – Both contained 97 (Not Applicable) for all students and provided no useful differentiation.
+
+By removing these redundant variables, the dataset is now more efficient while maintaining all variables necessary for cross-country, subnational, and methodological analyses.
+
+**Step 3: Deleting Constant Variables from the Dataset**
+
+Following the decision to remove the identified constant variables, the dataset was updated by deleting these variables from the data file pisa2022_cleaned_4_high_missingness_exclusion.csv to create a new dataset, pisa2022_cleaned_5_select_constant_variables_removed.csv.
+
+```{r remove_select_constant_variables_script, eval=FALSE}
+# Source the script for removing select constant variables
+# This script automates the removal of select constant variables, while ensuring the resulting dataset remains proprietary and is used exclusively for academic research.
+source("scripts/2022/pisa2022_cleaned_5_constant_variable_updates.R")
+```
+
+**Step 4: Updating the Variable Mapping Table and Questionnaire Response Summary**
+
+The variable mapping table and questionnaire response summary were then updated to reflect the exclusion of these constant variables. The status, status_priority, and status_reason columns in the variable mapping table were updated for the removed variables to indicate their exclusion, with the reason stated as "Constant variable".
+
+Similarly, the questionnaire response summary was updated by changing the inclusion_status, inclusion_priority, and reason_for_decision columns for these variables.
+
+```{r update_inclusion_exclusion_status_of_select_constant_variables_script, eval=FALSE}
+# Source the script for updating inclusion/exclusion status of select constant variables
+# This script automates the updating of inclusion/exclusion status of select constant variables, while ensuring the resulting dataset remains proprietary and is used exclusively for academic research.
+source("scripts/2022/update_inclusion_exclusion_status_of_select_constant_variables.R")
+```
+
+This process of identifying and removing select constant variables, along with the updates to the variable mapping table and response summary, ensures that the dataset is both cleaner and more focused on the relevant information for analysis.
+
+### Summary and Next Steps
+
+The variable selection process for this study was methodically designed to align with both theoretical frameworks and the research objectives. The integration of the PISA Questionnaire Framework, PISA ICT Framework, and the Multi-Level Framework of Technology Acceptance and Use (MLFTAU) allowed for a comprehensive approach to variable identification. This systematic method ensured that the selected variables reflect the structural factors (such as ICT access) and measurable outcomes (like ICT competencies) central to the study’s aims.
+
+During the variable selection process, several challenges were encountered. Notably, the complexities of dual-labeling variables, particularly those that spanned multiple constructs, required careful attention to ensure accurate categorization without redundancy. The need to maintain a balance between the expansive nature of the PISA ICT Framework and the more behavioral, nuanced aspects of MLFTAU was another area of focus. The ongoing task of ensuring empirical suitability—given constraints like missing data—added an additional layer of complexity. However, these challenges were effectively addressed through iterative refinement and systematic mapping, ensuring that all selected variables remained both theoretically relevant and empirically suitable for the analysis.
+
+With the variable selection process now complete, the next phase of the study will focus on Data Preparation and Cleaning. This stage is essential for transforming the raw dataset into a form suitable for robust analysis. Key tasks in this phase include:
+
+- Missing data will be handled by applying both granular techniques and imputation strategies to address gaps and ensure data completeness.
+
+- Ensuring consistency across datasets: To prepare for multi-cycle analysis, ensuring that the data from various years are harmonized to maintain comparability and consistency.
+
+This preparatory work will provide a solid foundation for the following stages of analysis, ensuring that the selected variables are not only theoretically aligned but also ready for empirical investigation.
+
+## Handling Missing Data
+
+### Statistical Evaluation of Missingness Patterns
+
+Handling missing data is a critical step in this research to ensure the validity and reliability of the findings. Missing data can introduce bias, reduce statistical power, and affect the generalizability of results, particularly in datasets with complex hierarchical structures like PISA. Evaluating and addressing missingness is essential for maintaining the integrity of the analysis and ensuring that the derived conclusions accurately reflect the underlying phenomena.
+
+The treatment of missing data requires a thorough understanding of its nature and causes. Missing data can arise from various factors, including survey design, non-response patterns, and data entry errors. Left unaddressed, missingness can distort the relationships between variables and compromise the comparability of results across different groups or contexts. Consequently, careful consideration is given to identifying, categorizing, and addressing missing data to preserve the robustness and accuracy of the findings.
+
+Evaluating missingness patterns in data is a crucial step in the data preparation process, as it helps identify how and why data is missing. Understanding the nature of the missingness (whether it is Missing Completely at Random (MCAR), Missing at Random (MAR), or Missing Not at Random (MNAR)) provides valuable insights into the integrity and reliability of the dataset. This evaluation directly informs the decisions made in subsequent steps of the analysis, particularly in how missing data is handled. In earlier stages of the research process, variables with high rates of missingness or constant values were excluded, and the dataset was filtered for completeness and relevance. However, the remaining missing data required careful consideration to determine the most appropriate method for handling it.
+
+**1. Imputation of Expected Education Level**
+
+The variable expected_education_level serves as a key outcome variable in this research, making the treatment of its missing values critical for maintaining the validity and reliability of the analysis. An evaluation of missingness patterns determined that the missing data aligned with the Missing at Random (MAR) assumption, allowing for the application of multiple imputation techniques.
+
+Multiple Imputation by Chained Equations (MICE) was utilized to address missing values, implemented through the mice package in R. This method was selected due to its robustness and flexibility in handling MAR data and its ability to incorporate auxiliary variables as predictors. 
+
+1. Predictors were selected based on their correlation with expected_education_level and their theoretical relevance, including variables related to ICT use, socioeconomic status, and the school environment.
+
+2. Five imputed datasets were generated, ensuring multiple plausible imputations. One completed dataset was selected for subsequent analysis to streamline the process and maintain consistency with the research workflow.
+
+3. The distribution of imputed values was compared to observed data to verify plausibility, and convergence diagnostics were conducted to ensure stability across iterations.
+
+The final dataset (pisa2022_cleaned_6_imputed_expected_education_level.csv) contains the imputed values for expected_education_level alongside all other original variables, with no changes made to the structure or values of the dataset except for the imputed variable.
+
+```{r impute_expected_education_level_script, eval=FALSE}
+# Source the script for imputing missing expected education level values
+# This script automates the process of multiple imputation using the MICE package,
+# while ensuring that only the variable `expected_education_level` is modified.
+source("scripts/2022/pisa2022_cleaned_6_imputed_expected_education_level.R")
+```
+
+By incorporating the source script, this document provides a reproducible link to the complete imputation process, ensuring transparency and adherence to academic best practices.
+
+**2. Recalculation of ICT Distress Online**
+
+The ict_distress_online variable measures the level of distress students experienced online when encountering inappropriate content, discriminatory content, offensive messages, and the public dissemination of personal information without consent. Given its importance in analyzing students' digital experiences, ensuring its accurate derivation is essential for meaningful analysis.
+
+A review of the PISA 2022 dataset revealed that ict_distress_online was derived as the sum of four input variables:  
+
+- upset_inappropriate_content  
+
+- upset_discriminatory_content  
+
+- upset_offensive_messages  
+
+- upset_info_public_without_consent
+
+While the methodology was broadly correct, a key issue was identified. Students who selected "This did not happen to me" (1, 1, 1, 1) were assigned `NA` instead of `0`, despite having valid responses that indicated an absence of distress. Handling of 99 ("No Response") values was also reviewed and confirmed to follow PISA’s methodology, where valid responses were correctly summed while ignoring 99.  
+
+Therefore, a number of steps were taken to address this incorrect handling of students who selected 1 ("This did not happen to me") for all four variables. 
+
+1. In line with PISA methodology, the response scale was rescaled from 1-5 to 0-4 to better reflect distress levels.   
+
+2. The original ict_distress_online variable was renamed ict_distress_online_old to preserve its original values.
+
+3. A new column ict_distress_online_recalculated was created immediately after ict_distress_online_old.
+
+4. Students who selected 1,1,1,1 across all input variables were assigned a distress score of 0, rather than NA, ensuring that their responses were accurately reflected. 
+
+5. Cases where at least one response was coded as 99 were left unchanged, as these responses were already correctly handled by ignoring 99 values and summing only valid responses.
+
+To verify the integrity of these changes, comparisons were conducted between the original dataset (cleaned_6) and the updated dataset (cleaned_7). 
+
+- The number of rows remained consistent. 
+
+- The number or variables increased by one from 1115 to 1116, reflecting the addition of the ict_distress_online_recalculated column. 
+
+- The total count of missing (NA) values remained unchanged, confirming that no unintended modifications were introduced, since all NAs from ict_distress_online_recalculated have been replaced by 0. 
+
+- The count of 99 values increased slightly, reflecting the additional instances introduced in ict_distress_online_recalculated.
+
+The final dataset, pisa2022_cleaned_7_recalculated_ict_distress_online.csv, now ensures that students who did not experience distress are correctly assigned a value of 0. This correction improves the accuracy and reliability of analyses examining students' online experiences and emotional well-being.  
+
+```{r pisa2022_cleaned_7_recalculated_ict_distress_online_script, eval=FALSE}
+# Source the script for recalculating the ICT distress online variable
+# This script ensures that the derived variable aligns with academic best practices 
+# and the guidelines outlined in the PISA Technical Report.
+source("scripts/2022/pisa2022_cleaned_7_recalculated_ict_distress_online.R")
+```
+
+### Granular Handling of Missing Data
+
+A meticulous approach to handling missing data represents a critical phase in this research, building upon the initial evaluation of missingness patterns to address the specific characteristics of variables within the dataset. While earlier stages excluded variables with high missingness or constant values, this phase refines the dataset further by systematically prioritizing variables, considering their relevance, type, and role within the dataset. Special attention is given to variables serving as inputs to derived constructs, ensuring that decisions regarding inclusion or exclusion align with the research objectives and the PISA framework.
+
+The dataset encompasses diverse variables originating from the student questionnaire (ST), ICT questionnaire (IC), school questionnaire (SC), and derived indices provided by PISA. Each of these presents unique considerations:
+
+1. Student and ICT Variables (ST and IC) are critical for assessing individual-level responses related to ICT use, behaviors, and attitudes.
+
+2. School-Level Variables (SC) are aggregated data for all students in a school, offering contextual insights but less emphasis for individual-level analysis.
+
+3. Derived Variables are precalculated indices such as plausible values (PVs) and composite indices essential for specific analyses but dependent on the quality and completeness of multiple input variables.
+
+This phase leverages the PISA 2022 Variable Mapping Table and the PISA 2022 Questionnaire Response Summary to systematically evaluate variables. These resources enable the consistent classification, validation, and prioritization of variables based on their relevance, dependencies, and role in the analytical framework. By addressing these elements, the granular handling process ensures that the dataset remains robust, interpretable, and aligned with research objectives.
+
+#### Prioritization of Variables
+
+refines the dataset by systematically assessing and selecting variables central to the research objectives, while accounting for dependencies on derived constructs. This step uses the PISA 2022 Variable Mapping Table to classify variables based on their relevance (high, medium, low) and dependencies on derived variables, ensuring transparency and alignment with methodological rigor. 
+
+Additionally, some PISA questionnaire responses are derived by validating student responses against school questionnaire data or other administrative sources. Furthermore, certain derived variables also act as input variables for additional derived constructs, necessitating careful documentation of these relationships.
+
+**Classification by Relevance**
+
+- High Relevance: Directly aligned with core constructs (e.g., ICT use, student well-being, or educational outcomes).
+
+- Medium Relevance: Provide contextual insights but are secondary to the primary research focus.
+
+- Low Relevance: Excluded unless critical to specific analyses or as input for derived constructs.
+
+**Dependency on Derived Variables**
+
+- Identification of variables that contribute to PISA-derived constructs such as plausible values (PVs), composite indices, and aggregated metrics.
+
+- Retention of all input variables and their associated derived constructs to preserve analytical integrity or exclusion of all if the derived variable is deemed non-essential.
+
+**Updated Structure of the Variable Mapping Table**
+
+To improve clarity and documentation of relationships between input variables and derived constructs, new columns have been added to the mapping table:
+
+- derived_variable (Yes/No): Indicates whether the variable is a derived construct.
+
+- derived_variable_calculation: The calculation logic for the derived construct, where available, or notes its absence.
+
+- derived_variable_validation: Indicates the validation status of the derived construct (e.g., "Valid" or "Validation not feasible"). Invalid derived variables are corrected where possible, as was done previously with expected_education_level and ict_online_distress.
+
+- input_variable (Yes/No): Identifies whether the variable is an input variable contributing to a derived construct.
+
+- dependent_derived_variable: Lists the derived constructs that rely on the input variable.
+
+**Reevaluation of Inclusion/Exclusion** 
+
+Variables are systematically reviewed based on their relevance and role:
+
+- High- and medium-relevance variables are prioritized.
+
+- Low-relevance variables are excluded unless serving critical roles in derived constructs.
+
+By integrating these steps, the prioritization process ensures a focused dataset that maintains the integrity of derived constructs while aligning with the research's analytical framework.
+
+After updating the status, status_priority, and status_reason columns in the variable mapping table, the variables labeled as "Excluded" were systematically removed from the dataset to ensure that only relevant variables are retained for the analysis.
+
+This step is important for ensuring the dataset reflects the inclusion decisions based on the status columns and the variable priority levels. The variables marked as "Excluded" in the status column were removed programmatically to prevent them from influencing subsequent analysis.
+
+```{r remove_excluded_variables, eval=FALSE}
+# Load necessary libraries
+library(dplyr)
+library(readr)
+
+# Read in the cleaned dataset
+pisa_data_cleaned_4 <- read.csv("data/private/processed/2022/pisa2022_cleaned_4_high_missingness_exclusion.csv")
+
+# Load the variable mapping table that identifies excluded variables
+variable_mapping_table <- read.csv("data/private/metadata/2022/pisa2022_variable_mapping_table.csv")
+
+# Identify excluded variables from the mapping table (filter by 'Exclude' in 'status' column)
+excluded_variables_from_mapping <- variable_mapping_table %>%
+  filter(status == "Excluded") %>%
+  select(renamed_variable) %>%  # Updated to the correct column name
+  pull()  # Extract the variable names as a vector
+
+# Check which excluded variables exist in the dataset
+existing_excluded_vars <- excluded_variables_from_mapping[excluded_variables_from_mapping %in% colnames(pisa_data_cleaned_4)]
+
+# Get the number of excluded variables
+num_excluded_variables <- length(existing_excluded_vars)
+
+# Remove the excluded variables that exist in the dataset
+pisa_data_cleaned_5 <- pisa_data_cleaned_4 %>%
+  select(-one_of(existing_excluded_vars))
+
+# Get the number of remaining variables after exclusion
+num_remaining_variables <- ncol(pisa_data_cleaned_5)
+
+# Save the intermediate cleaned dataset (after removing excluded variables) to a new file
+write.csv(pisa_data_cleaned_5, "data/private/processed/2022/pisa2022_cleaned_5_logical_exclusion.csv", row.names = FALSE)
+
+# Confirm the removal and number of excluded variables
+cat("A total of", num_excluded_variables, "variables have been excluded from the dataset.\n")
+cat("The dataset has been saved as 'pisa2022_cleaned_5_logical_exclusion.csv'.\n")
+cat("There are", num_remaining_variables, "variables remaining in the dataset after exclusion.\n")
+```
+
+```{r remove_excluded_variables_script, eval=FALSE}
+# Source the script for removing excluded variables
+# This script automates the removal of excluded variables, while ensuring the resulting dataset remains proprietary and is used exclusively for academic research.
+source("scripts/remove_excluded_variables.R")
+```
+
+After running this code, the dataset pisa2022_cleaned_5_logical_exclusion.csv is created, and all variables marked as "Excluded" are removed from the dataset. The confirmation output displays the number of variables excluded, as well as the number of variables remaining in the dataset after exclusion. It confirms that: 
+
+- A total of 86 variables are excluded 
+
+- The dataset is saved as pisa2022_cleaned_5_logical_exclusion.csv
+
+- There are 1129 variables remaining in the dataset after exclusion.
+
+Variables excluded during the status decision process remain in the variable mapping table and questionnaire response summary. This decision ensures transparency, facilitates reproducibility, and allows for revisiting inclusion decisions in future research. Excluded variables are programmatically filtered out during analysis to focus on the included variables.
+
+#### Treatment of Missingness by Variable Type
+
+Student and ICT Variables (ST and IC):
+Handling NA, 95, 97, 98, and 99 values.
+Ensuring completeness for individual-level analyses.
+School-Level Variables (SC):
+Addressing shared responses for students in the same school.
+Minimizing bias in individual-level analyses.
+Derived Variables:
+Validating precalculated indices (e.g., plausible values and weights).
+Confirming consistency with PISA coding standards.
+Flagging and addressing anomalies in derived indices.
+
+#### Cross-Referencing Summary Tables
+
+Leveraging the Student Response Summary Table for consistent treatment of value codes and labels.
+Ensuring alignment with PISA-defined response categories (e.g., 95, 97, 98, 99).
+Documenting decisions to preserve transparency.
+
+#### Identifying and Handling Data Irregularities
+
+Detecting invalid, incomplete, or inconsistent responses.
+Strategies for managing anomalies (e.g., imputation, exclusion, or categorization).
+Discussion of thresholds for exclusion or further review.
+
+#### Finalizing the Dataset
+
+Overview of changes made during granular handling.
+Summary of excluded variables and rationale.
+Verification of dataset integrity (e.g., row and column counts, checks for unintended changes).
+
+#### Summary and Next Steps
+
+Brief recap of the granular handling process.
+Transition to subsequent steps in data preparation (e.g., outlier detection, analytical modeling).
+
+
+
+
+
+### Imputation of Missing Data
+
+
+
+
+### Checking for Redundancy
+
+To ensure parsimony and avoid multicollinearity in the dataset, this study systematically identified and excluded redundant variables during the selection process. Redundancy checks were critical in refining the dataset for robust and interpretable statistical analysis, ensuring that retained variables offered unique insights into ICT integration in education.
+
+Redundancy was assessed using both statistical and conceptual methods:
+
+Statistical Screening
+Pairwise correlations among variables were calculated to detect high correlations (greater than 0.85). This threshold was chosen based on standard practices in multivariate analysis, as variables with correlations above this value are considered highly collinear and could distort the results of statistical models, such as regression analyses.
+
+For highly correlated pairs, the following approach was used:
+
+Correlation Matrix: A correlation matrix was computed for the retained variables to identify pairs of variables with high correlations. Correlations above 0.85 were flagged as potentially redundant.
+Retention Decision: For each pair of highly correlated variables, conceptual alignment with the PISA ICT and MLFTAU frameworks was considered to determine which variable to retain. The variable that provided the most direct relevance to the research questions was kept, while the other was excluded.
+Conceptual Alignment
+Beyond statistical measures, conceptual redundancy was assessed by reviewing the variables for overlap in what they measured, especially when indicators were highly similar within a framework or across frameworks. For example, variables that measure similar dimensions of ICT access (e.g., internet access at home vs. internet access at school) might be conceptually redundant.
+
+The review process involved:
+
+Framework Review: Each pair of highly correlated variables was reviewed within the context of the PISA ICT and MLFTAU frameworks. The goal was to retain the variable that best aligned with the research objectives and provided unique insights into ICT integration in education.
+Relevance to Research Objectives: The retained variable was chosen based on its ability to address the research objectives clearly and comprehensively, ensuring it added value to the analysis without duplicating information from other variables.
+Example of Redundancy Check:
+For example, consider two variables that measure ICT access:
+
+Access to ICT at Home and Access to ICT at School.
+Although both are related to ICT access, they capture slightly different dimensions (one is home-based, the other school-based). However, if both variables are highly correlated, the decision would be made based on the conceptual alignment with the framework. If the study focuses on home-based learning, Access to ICT at Home might be retained, while the other would be excluded.
+
+Variables were excluded if:
+
+- They exhibited a high correlation (> 0.85) with another variable measuring the same construct.
+
+- Their theoretical alignment was weaker compared to alternatives measuring the same phenomenon.
+
+- Their inclusion introduced redundancy without adding actionable insights.
+
+For instance, the variables capturing teacher training for ICT integration (e.g., "Teacher ICT Training Frequency" and "Teacher ICT Confidence Levels") exhibited redundancy. The variable "Teacher ICT Confidence Levels" was retained due to its stronger alignment with both behavioral constructs in MLFTAU and process dimensions in the PISA ICT Framework.
+
+Following redundancy checks, a total of X variables were excluded, leaving Y unique variables aligned with the research frameworks. This streamlined dataset ensures that each variable contributes distinct value to the analysis, supporting robust and actionable findings.
+
+### Summary and Next Steps
+
+
+## Outlier Detection and Treatment
+
+Define what constitutes an outlier in the context of the PISA dataset.
+Emphasize their potential impact on analyses, such as distorting means, variances, and regression estimates.
+Highlight the importance of identifying and handling outliers for the study's validity.
+Outlier Detection Methods
+
+Describe the methods used to identify outliers:
+Univariate Outliers: Use thresholds like z-scores, interquartile range (IQR), or domain-specific thresholds to flag extreme values in individual variables.
+Multivariate Outliers: Use techniques like Mahalanobis distance to identify unusual combinations of values across variables.
+Contextual Outliers: Consider contextual factors, such as school-level averages that are extreme compared to other schools.
+Handling Outliers
+
+Outline strategies for handling outliers, such as:
+Retaining outliers that are valid but extreme responses.
+Transforming or winsorizing extreme values to reduce their impact.
+Removing outliers that represent clear errors or invalid entries.
+Highlight how decisions about outliers will depend on their context and the research objectives.
+Cross-Referencing Other Sections
+
+Note overlaps with earlier processes (e.g., the recalculation of variables like ICT distress online may also reveal outliers).
+Cross-reference sections where outliers could significantly affect imputation or aggregated indices.
+Outputs and Verification
+
+Document the flagged and handled outliers in a log file.
+Summarize the number of outliers identified and the steps taken to handle them.
+
+Summary and Next Steps
+
+## Analytical Methods
+
+In the example analysis below, the plausible values and weight for the specified year are accessed from the lists, and the average mathematics performance is calculated by gender, demonstrating the practical use of the data and lists.
+
+**Handling of Plausible Values (PVs) and Weights** 
+
+The PISA dataset includes Plausible Values (PVs) for student achievement scores in reading, mathematics, science, and creative thinking. PVs are multiple imputed estimates of students’ latent abilities rather than exact scores, which means they are essential for accurate statistical inferences and valid comparisons across student groups. Unlike single point estimates, PVs account for measurement error by providing a range of estimates, enhancing the validity of inferences drawn from these scores. For this study, PVs will be applied in all analyses involving student performance, aligning with best practices in large-scale assessments to ensure robust statistical conclusions.
+
+Additionally, survey weights are provided in the PISA dataset to adjust for the complex sampling designs used, ensuring the sample accurately represents the broader population. Since PISA employs stratified sampling to capture diverse student populations, applying these weights corrects for selection probability differences, allowing for generalizable and unbiased parameter estimates. Weights are particularly critical in maintaining statistical rigor in this study, as they ensure that results are representative of Thailand’s student population. In all analyses involving PVs, the corresponding survey weights will be applied to control for sampling biases and uphold the validity of statistical inferences.
+
+
+
+
+
 
 A range of statistical techniques will be applied to analyze the data.
 
@@ -557,6 +1861,7 @@ Weighted Linear Regression: This will assess the impact of ICT use on student ou
 Plausible Values (PVs): PVs will be used to represent student performance across multiple dimensions, accounting for uncertainty in test scores. The EdSurvey package will be utilized to handle PVs in analysis.
 
 ## Model Validation
+
 Validation techniques, such as cross-validation and sensitivity analysis, will be employed to ensure the robustness of the models. This includes testing for assumptions, identifying potential biases, and assessing model stability.
 
 # Addressing Validity and Reliability

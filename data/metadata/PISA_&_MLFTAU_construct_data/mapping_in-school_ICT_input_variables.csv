@@ -1,6 +1,6 @@
-Framework Construct,Variable,Description,Data Source,Relevance to Research Objectives
-Input (In-School),ICT Availability,Number and quality of computers and digital devices available in classrooms,PISA 2022,"Assesses the basic ICT infrastructure in schools, crucial for equitable access and effective ICT integration"
-,Teacher ICT Training,Level of teacher training or professional development in ICT skills,PISA 2022,"Evaluates teacher readiness to implement ICT in teaching, influencing student engagement with technology"
-,Digital Learning Resources,Access to digital resources like educational software and online tools in schools,PISA 2022,Measures the variety of resources available to support diverse ICT-based teaching methods
-,Internet Connectivity,Quality and speed of internet access within the school environment,PISA 2022,"Determines the school’s capacity to support internet-based learning, a critical component of ICT integration"
-,Technical Support for ICT,Availability of dedicated technical support staff for ICT maintenance,PISA 2022,"Provides insight into the ongoing support for ICT, which affects sustainability and reliability of ICT resources"
+Framework Domain,Framework Construct,Description,Relevance to Research Objectives
+Input (In-School),ICT Availability,Number and quality of computers and digital devices available in classrooms,"Assesses the basic ICT infrastructure in schools, crucial for equitable access and effective ICT integration"
+,Teacher ICT Training,Level of teacher training or professional development in ICT skills,"Evaluates teacher readiness to implement ICT in teaching, influencing student engagement with technology"
+,Digital Learning Resources,Access to digital resources like educational software and online tools in schools,Measures the variety of resources available to support diverse ICT-based teaching methods
+,Internet Connectivity,Quality and speed of internet access within the school environment,"Determines the school’s capacity to support internet-based learning, a critical component of ICT integration"
+,Technical Support for ICT,Availability of dedicated technical support staff for ICT maintenance,"Provides insight into the ongoing support for ICT, which affects sustainability and reliability of ICT resources"

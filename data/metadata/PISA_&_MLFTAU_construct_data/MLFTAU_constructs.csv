@@ -1,17 +1,25 @@
-Dimension,Construct,Definition,Relevance
-Individual,Performance Expectancy (PE),The degree to which an individual believes that using the technology will help them to attain gains in job performance.,Assesses how students perceive the use of ICT in improving their learning outcomes.
-,Effort Expectancy (EE),The degree of ease associated with the use of the technology.,Assesses how the perceived ease of using ICT impacts students' willingness to engage with it for educational purposes.
-,Social Influence (SI),The degree to which an individual perceives that important others believe they should use the new technology.,Assesses the impact of peer and parental influence on students' use of ICT in education.
-,Facilitating Conditions (FC),The degree to which an individual believes that an organisational and technical infrastructure exists to support the use of the technology.,Assesses the availability of ICT resources and support in schools that enable students to use ICT effectively.
-,Hedonic Motivation,The pleasure or pain derived from using the technology.,Assesses how the enjoyment of using ICT influences students' engagement with technology for learning.
-,Price Value,The individual's cognitive trade-off between the perceived benefits of the technology and its monetary cost.,"Although this construct may be more relevant in consumer settings, it could be adapted to assess the perceived value of investing time and effort in using ICT for educational purposes."
-,Habit,The extent to which individuals tend to perform behaviours automatically because of learning.,Assesses how habitual use of ICT outside of school settings influences students' use of ICT for learning.
-Group,Group Norms,The shared expectations about behaviour within the group.,Assesses how classroom or school norms regarding ICT use impact students' attitudes and behaviours.
-,Group Cohesion,The extent to which group members stick together and remain united in the pursuit of common goals.,Assesses how collaborative learning environments using ICT influence educational outcomes.
-,Team Climate for Innovation,"The shared perceptions of the group's practices, procedures, and behaviours that support innovation.",Assesses how a school's climate for innovation affects the adoption and effective use of ICT in education.
-Organisation,Organisational Facilitating Conditions,The degree to which an organisation provides the infrastructure and support for the use of the technology.,Assesses how the school's ICT infrastructure and policies support or hinder the integration of ICT in education.
-,Organisational Culture,"The shared values, beliefs, and practices within an organisation that shape behaviour and attitudes toward technology use.",Assesses the school's culture regarding how technology can provide insights into the systemic factors influencing ICT integration in education.
-,Leadership Support,The extent to which leaders within the organisation encourage and support the use of technology.,Assesses the role of school leadership in promoting or impeding the use of ICT for educational purposes.
-Cross-Level Constructs,Cross-Level Interactions,The interactions between constructs at different levels that influence technology acceptance and use.,Assesses how individual attitudes interact with group norms or organisational culture to impact ICT use in educational settings.
-Outcomes (Output),Educational Outcomes,"Impact of ICT on students' academic performance in areas such as reading, mathematics, and science out of school.",Evaluates the effectiveness of ICT in enhancing learning out of school.
-,Student Well-being,Influence of ICT use on students' emotional and psychological well-being out of school.,Examines the broader effects of ICT on student welfare out of school.
+Domain,Construct,Definition,Relevance
+Individual,Performance Expectancy,The degree to which using ICT enhances learning outcomes and performance.,"Students' belief that ICT tools improve their academic achievement (e.g., digital learning resources for homework)."
+,Effort Expectancy,The perceived ease of using ICT for learning purposes.,"Students' perceived ease of using ICT tools (e.g., accessing platforms, completing assignments)."
+,Social Influence,"The degree to which peers, teachers, or parents influence ICT use.","Influence of peers, teachers, and parents on students' ICT behaviors and attitudes."
+,Facilitating Conditions,Perceived availability of support and resources for ICT use.,"Perceptions of ICT availability, technical support, and teacher guidance in facilitating learning."
+,Hedonic Motivation,Enjoyment derived from using ICT for learning or leisure purposes.,"Students' enjoyment of ICT use for educational games, creative projects, or entertainment outside school."
+,Habit,The extent to which ICT use has become automatic or habitual.,"Students' consistent use of ICT tools for learning, entertainment, or communication."
+,Price Value,"The cost-benefit analysis of using ICT resources (e.g., time, money).",Students' perceptions of affordability and value in accessing ICT tools or resources.
+Group/Class,Performance Expectancy,ICT use among peers under teacher guidance improves collective performance.,"Use of ICT tools to enhance group work, class projects, and peer collaboration within teacher-supervised settings."
+,Social Influence,Influence of teachers and peers in classroom ICT use.,Teachers' and peers’ encouragement to integrate ICT into classroom activities.
+,Facilitating Conditions,Availability of ICT tools and teacher support in the classroom environment.,"Teachers ensuring ICT access (e.g., laptops, tablets) and providing technical or instructional support."
+Organisation/ School,Facilitating Conditions,"Availability of ICT infrastructure, support, and training at the school level.","Presence of technical support staff, teacher training, and robust ICT infrastructure (hardware and software)."
+,Social Influence,Teachers' and school leadership’s influence on ICT integration.,"Teachers modeling ICT integration, and leadership promoting school-wide ICT policies and initiatives."
+,Performance Expectancy,Schools’ emphasis on ICT improving student and teacher outcomes.,School leadership fostering ICT use to improve teaching effectiveness and student performance.
+,Effort Expectancy,Teachers' and schools' promotion of ICT as easy to use for learning.,"Efforts to make ICT tools intuitive, accessible, and manageable for both students and teachers."
+Organisation/ Family,Facilitating Conditions,Availability of ICT tools and internet access at home.,"Access to devices, broadband, and parental support for ICT use in the household."
+,Social Influence,Influence of parents in encouraging and monitoring ICT use.,"Parental attitudes, guidance, and monitoring of ICT use for learning or leisure purposes."
+,Performance Expectancy,Parents' perception of ICT as beneficial for their child’s learning.,Parents' belief in ICT improving their child’s academic performance and future opportunities.
+,Effort Expectancy,Parents’ view of ICT tools as easy for their children to use.,"Parents' encouragement based on ICT ease of use, accessibility, and manageability."
+Organisation/ Society,Facilitating Conditions,"Broader ICT access, affordability, and infrastructure in society.","Local or national ICT infrastructure such as broadband coverage, affordable resources, and access to ICT tools."
+,Social Influence,Influence of societal norms and policies promoting ICT integration.,"Regulatory environments, government initiatives, and public campaigns encouraging ICT in education."
+,Price Value,Affordability and perceived societal benefit of ICT use.,"Societal perception of ICT as affordable, valuable, and critical for education and economic advancement."
+Output,Cognitive Learning Outcomes,"Student achievement in core subjects such as mathematics, reading, and science.",Measures the academic benefits of ICT usage on student performance.
+,ICT Competencies,"Students' digital literacy, problem-solving skills, and self-efficacy in using ICT tools.",Assesses how well students are prepared to thrive in technology-rich learning environments.
+,Well-Being Outcomes,"Impacts of ICT use on students’ mental, emotional, and social well-being.",Evaluates whether ICT use has positive or negative effects on students' well-being and emotional health.
