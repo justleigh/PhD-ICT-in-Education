@@ -7,5 +7,4 @@
 # Ignore RStudio project files
 .Rproj.user
 data/private/
-data/private/metadata/
-data/private/processed/
+output/private/
